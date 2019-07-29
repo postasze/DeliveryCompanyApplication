@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="ADRESY">
+      <EntityTypeMapping TypeName="Model.ADRESY">
+        <MappingFragment StoreEntitySet="ADRESY">
+          <ScalarProperty Name="ID_ADRESU" ColumnName="ID_ADRESU" />
+          <ScalarProperty Name="ULICA" ColumnName="ULICA" />
+          <ScalarProperty Name="NUMER_DOMU" ColumnName="NUMER_DOMU" />
+          <ScalarProperty Name="NUMER_MIESZKANIA" ColumnName="NUMER_MIESZKANIA" />
+          <ScalarProperty Name="KOD_POCZTOWY" ColumnName="KOD_POCZTOWY" />
+          <ScalarProperty Name="MIASTO" ColumnName="MIASTO" />
+          <ScalarProperty Name="WOJEWÓDZTWO" ColumnName="WOJEWÓDZTWO" />
+          <ScalarProperty Name="PAŃSTWO" ColumnName="PAŃSTWO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KONTA">
+      <EntityTypeMapping TypeName="Model.KONTA">
+        <MappingFragment StoreEntitySet="KONTA">
+          <ScalarProperty Name="ID_KONTA" ColumnName="ID_KONTA" />
+          <ScalarProperty Name="NICK" ColumnName="NICK" />
+          <ScalarProperty Name="TYP_KONTA" ColumnName="TYP_KONTA" />
+          <ScalarProperty Name="HASŁO" ColumnName="HASŁO" />
+          <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KURIERZY_POJAZDY">
+      <EntityTypeMapping TypeName="Model.KURIERZY_POJAZDY">
+        <MappingFragment StoreEntitySet="KURIERZY_POJAZDY">
+          <ScalarProperty Name="ID_KURIERA" ColumnName="ID_KURIERA" />
+          <ScalarProperty Name="ID_POJAZDU" ColumnName="ID_POJAZDU" />
+          <ScalarProperty Name="DATA_UŻYCIA" ColumnName="DATA_UŻYCIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOKALIZACJE">
+      <EntityTypeMapping TypeName="Model.LOKALIZACJE">
+        <MappingFragment StoreEntitySet="LOKALIZACJE">
+          <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+          <ScalarProperty Name="TYP_LOKALIZACJI" ColumnName="TYP_LOKALIZACJI" />
+          <ScalarProperty Name="ADRES_LOKALIZACJI" ColumnName="ADRES_LOKALIZACJI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MIASTA">
+      <EntityTypeMapping TypeName="Model.MIASTA">
+        <MappingFragment StoreEntitySet="MIASTA">
+          <ScalarProperty Name="ID_MIASTA" ColumnName="ID_MIASTA" />
+          <ScalarProperty Name="WOJEWÓDZTWO" ColumnName="WOJEWÓDZTWO" />
+          <ScalarProperty Name="MIASTO" ColumnName="MIASTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NADAWCY">
+      <EntityTypeMapping TypeName="Model.NADAWCY">
+        <MappingFragment StoreEntitySet="NADAWCY">
+          <ScalarProperty Name="ID_NADAWCY" ColumnName="ID_NADAWCY" />
+          <ScalarProperty Name="ID_KONTA" ColumnName="ID_KONTA" />
+          <ScalarProperty Name="ADRES_ZAMIESZKANIA" ColumnName="ADRES_ZAMIESZKANIA" />
+          <ScalarProperty Name="PIERWSZE_IMIE" ColumnName="PIERWSZE_IMIE" />
+          <ScalarProperty Name="DRUGIE_IMIE" ColumnName="DRUGIE_IMIE" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ODBIORCY">
+      <EntityTypeMapping TypeName="Model.ODBIORCY">
+        <MappingFragment StoreEntitySet="ODBIORCY">
+          <ScalarProperty Name="ID_ODBIORCY" ColumnName="ID_ODBIORCY" />
+          <ScalarProperty Name="ADRES_ZAMIESZKANIA" ColumnName="ADRES_ZAMIESZKANIA" />
+          <ScalarProperty Name="PIERWSZE_IMIE" ColumnName="PIERWSZE_IMIE" />
+          <ScalarProperty Name="DRUGIE_IMIE" ColumnName="DRUGIE_IMIE" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PACZKI">
+      <EntityTypeMapping TypeName="Model.PACZKI">
+        <MappingFragment StoreEntitySet="PACZKI">
+          <ScalarProperty Name="ID_PACZKI" ColumnName="ID_PACZKI" />
+          <ScalarProperty Name="ID_PRZESYŁKI" ColumnName="ID_PRZESYŁKI" />
+          <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+          <ScalarProperty Name="TYP_PACZKI" ColumnName="TYP_PACZKI" />
+          <ScalarProperty Name="MASA_PACZKI" ColumnName="MASA_PACZKI" />
+          <ScalarProperty Name="WYMIARY_PACZKI" ColumnName="WYMIARY_PACZKI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PAŃSTWA">
+      <EntityTypeMapping TypeName="Model.PAŃSTWA">
+        <MappingFragment StoreEntitySet="PAŃSTWA">
+          <ScalarProperty Name="ID_PAŃSTWA" ColumnName="ID_PAŃSTWA" />
+          <ScalarProperty Name="PAŃSTWO" ColumnName="PAŃSTWO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PŁATNOŚCI">
+      <EntityTypeMapping TypeName="Model.PŁATNOŚCI">
+        <MappingFragment StoreEntitySet="PŁATNOŚCI">
+          <ScalarProperty Name="ID_PŁATNOŚCI" ColumnName="ID_PŁATNOŚCI" />
+          <ScalarProperty Name="TYP_PŁATNOŚCI" ColumnName="TYP_PŁATNOŚCI" />
+          <ScalarProperty Name="OPIS_PŁATNOŚCI" ColumnName="OPIS_PŁATNOŚCI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POJAZDY_KURIERSKIE">
+      <EntityTypeMapping TypeName="Model.POJAZDY_KURIERSKIE">
+        <MappingFragment StoreEntitySet="POJAZDY_KURIERSKIE">
+          <ScalarProperty Name="ID_POJAZDU" ColumnName="ID_POJAZDU" />
+          <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+          <ScalarProperty Name="TYP_POJAZDU" ColumnName="TYP_POJAZDU" />
+          <ScalarProperty Name="NUMER_REJESTRACYJNY" ColumnName="NUMER_REJESTRACYJNY" />
+          <ScalarProperty Name="MARKA_POJAZDU" ColumnName="MARKA_POJAZDU" />
+          <ScalarProperty Name="DATA_NASTĘPNEGO_PRZEGLĄDU" ColumnName="DATA_NASTĘPNEGO_PRZEGLĄDU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRACOWNICY">
+      <EntityTypeMapping TypeName="Model.PRACOWNICY">
+        <MappingFragment StoreEntitySet="PRACOWNICY">
+          <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PRACOWNIKA" />
+          <ScalarProperty Name="TYP_PRACOWNIKA" ColumnName="TYP_PRACOWNIKA" />
+          <ScalarProperty Name="ADRES_ZAMIESZKANIA" ColumnName="ADRES_ZAMIESZKANIA" />
+          <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+          <ScalarProperty Name="ID_KONTA" ColumnName="ID_KONTA" />
+          <ScalarProperty Name="PIERWSZE_IMIE" ColumnName="PIERWSZE_IMIE" />
+          <ScalarProperty Name="DRUGIE_IMIE" ColumnName="DRUGIE_IMIE" />
+          <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+          <ScalarProperty Name="WYNAGRODZENIE" ColumnName="WYNAGRODZENIE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRZESYŁKI">
+      <EntityTypeMapping TypeName="Model.PRZESYŁKI">
+        <MappingFragment StoreEntitySet="PRZESYŁKI">
+          <ScalarProperty Name="ID_PRZESYŁKI" ColumnName="ID_PRZESYŁKI" />
+          <ScalarProperty Name="ID_NADAWCY" ColumnName="ID_NADAWCY" />
+          <ScalarProperty Name="ID_ODBIORCY" ColumnName="ID_ODBIORCY" />
+          <ScalarProperty Name="ID_KURIERA_DOSTARCZAJĄCEGO" ColumnName="ID_KURIERA_DOSTARCZAJĄCEGO" />
+          <ScalarProperty Name="TYP_PRZESYŁKI" ColumnName="TYP_PRZESYŁKI" />
+          <ScalarProperty Name="STATUS_PRZESYŁKI" ColumnName="STATUS_PRZESYŁKI" />
+          <ScalarProperty Name="ID_ADRESU_POCZĄTKOWEGO" ColumnName="ID_ADRESU_POCZĄTKOWEGO" />
+          <ScalarProperty Name="ID_ADRESU_KOŃCOWEGO" ColumnName="ID_ADRESU_KOŃCOWEGO" />
+          <ScalarProperty Name="ID_PŁATNOŚCI" ColumnName="ID_PŁATNOŚCI" />
+          <ScalarProperty Name="DATA_NADANIA_PRZESYŁKI" ColumnName="DATA_NADANIA_PRZESYŁKI" />
+          <ScalarProperty Name="DATA_ODEBRANIA_PRZESYŁKI" ColumnName="DATA_ODEBRANIA_PRZESYŁKI" />
+          <ScalarProperty Name="KOSZT_PRZESYŁKI" ColumnName="KOSZT_PRZESYŁKI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATUS_PRZESYŁKI">
+      <EntityTypeMapping TypeName="Model.STATUS_PRZESYŁKI">
+        <MappingFragment StoreEntitySet="STATUS_PRZESYŁKI">
+          <ScalarProperty Name="ID_STATUSU_PRZESYŁKI" ColumnName="ID_STATUSU_PRZESYŁKI" />
+          <ScalarProperty Name="OPIS_STATUSU_PRZESYŁKI" ColumnName="OPIS_STATUSU_PRZESYŁKI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_KONT">
+      <EntityTypeMapping TypeName="Model.TYPY_KONT">
+        <MappingFragment StoreEntitySet="TYPY_KONT">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_KONTA" ColumnName="TYP_KONTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_LOKALIZACJI">
+      <EntityTypeMapping TypeName="Model.TYPY_LOKALIZACJI">
+        <MappingFragment StoreEntitySet="TYPY_LOKALIZACJI">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_LOKALIZACJI" ColumnName="TYP_LOKALIZACJI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_PACZEK">
+      <EntityTypeMapping TypeName="Model.TYPY_PACZEK">
+        <MappingFragment StoreEntitySet="TYPY_PACZEK">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_PACZKI" ColumnName="TYP_PACZKI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_PŁATNOŚCI">
+      <EntityTypeMapping TypeName="Model.TYPY_PŁATNOŚCI">
+        <MappingFragment StoreEntitySet="TYPY_PŁATNOŚCI">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_PŁATNOŚCI" ColumnName="TYP_PŁATNOŚCI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_POJAZDÓW_KURIERSKICH">
+      <EntityTypeMapping TypeName="Model.TYPY_POJAZDÓW_KURIERSKICH">
+        <MappingFragment StoreEntitySet="TYPY_POJAZDÓW_KURIERSKICH">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_POJAZDU" ColumnName="TYP_POJAZDU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_PRACOWNIKÓW">
+      <EntityTypeMapping TypeName="Model.TYPY_PRACOWNIKÓW">
+        <MappingFragment StoreEntitySet="TYPY_PRACOWNIKÓW">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_PRACOWNIKA" ColumnName="TYP_PRACOWNIKA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPY_PRZESYŁEK">
+      <EntityTypeMapping TypeName="Model.TYPY_PRZESYŁEK">
+        <MappingFragment StoreEntitySet="TYPY_PRZESYŁEK">
+          <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+          <ScalarProperty Name="TYP_PRZESYŁKI" ColumnName="TYP_PRZESYŁKI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WOJEWÓDZTWA">
+      <EntityTypeMapping TypeName="Model.WOJEWÓDZTWA">
+        <MappingFragment StoreEntitySet="WOJEWÓDZTWA">
+          <ScalarProperty Name="ID_WOJEWÓDZTWA" ColumnName="ID_WOJEWÓDZTWA" />
+          <ScalarProperty Name="PAŃSTWO" ColumnName="PAŃSTWO" />
+          <ScalarProperty Name="WOJEWÓDZTWO" ColumnName="WOJEWÓDZTWO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="SZEFOWIE_PODWŁADNI" TypeName="Model.SZEFOWIE_PODWŁADNI" StoreEntitySet="SZEFOWIE_PODWŁADNI">
+      <EndProperty Name="PRACOWNICY">
+        <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PODWŁADNEGO" />
+      </EndProperty>
+      <EndProperty Name="PRACOWNICY1">
+        <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_SZEFA" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="GENERUJ_ADRESY" FunctionName="Model.Store.GENERUJ_ADRESY" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_KONTA" FunctionName="Model.Store.GENERUJ_KONTA" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_KURIERZY_POJAZDY" FunctionName="Model.Store.GENERUJ_KURIERZY_POJAZDY" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_LOKALIZACJE" FunctionName="Model.Store.GENERUJ_LOKALIZACJE" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_NADAWCÓW" FunctionName="Model.Store.GENERUJ_NADAWCÓW" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_ODBIORCÓW" FunctionName="Model.Store.GENERUJ_ODBIORCÓW" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_PACZKI" FunctionName="Model.Store.GENERUJ_PACZKI" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_PŁATNOŚCI" FunctionName="Model.Store.GENERUJ_PŁATNOŚCI" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_POJAZDY" FunctionName="Model.Store.GENERUJ_POJAZDY" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_PRACOWNIKÓW" FunctionName="Model.Store.GENERUJ_PRACOWNIKÓW" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_PRZESYŁKI" FunctionName="Model.Store.GENERUJ_PRZESYŁKI" />
+    <FunctionImportMapping FunctionImportName="GENERUJ_SZEFOWIE_PODWŁADNI" FunctionName="Model.Store.GENERUJ_SZEFOWIE_PODWŁADNI" />
+  </EntityContainerMapping>
+</Mapping>

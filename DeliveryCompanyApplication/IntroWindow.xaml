@@ -1,0 +1,32 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.IntroWindow"
+        Title="Aplikacja firmy wykonujacej przesyłki kurierskie" Height="420.5" Width="666" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet x:Key="dataSet"/>
+        <CollectionViewSource x:Key="aDRESYViewSource" Source="{Binding ADRESY, Source={StaticResource dataSet}}"/>
+        <CollectionViewSource x:Key="kONTAViewSource" Source="{Binding KONTA, Source={StaticResource dataSet}}"/>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="kONTAViewSource1" Source="{Binding KONTA, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource aDRESYViewSource}" Margin="0,0,28,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="24*"/>
+            <ColumnDefinition Width="263*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Zarejestruj się aby stworzyć nowe konto" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="221"/>
+        <Button Content="Rejestracja" Grid.Column="2" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="75" Click="RegistrationButtonClicked" Height="22"/>
+        <Button x:Name="LoginButton" Content="Logowanie" Grid.Column="2" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="75" Click="LogInButtonClicked" Height="22"/>
+        <Label Content="Zaloguj sie na istniejące konto użytkownika" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="243"/>
+        <Label Content="Śledzenie przesyłek bez konieczności logowania" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="263"/>
+        <Button x:Name="DeliveryTrackingButton" Content="Śledzenie przesyłek" Grid.Column="2" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top" Width="121" Click="DeliveryTrackingButtonClicked" Height="22"/>
+        <Button x:Name="LoginButton2" Content="Logowanie" Grid.Column="2" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top" Width="75" Click="LogInButton2Clicked" Height="22"/>
+        <Label Content="Zaloguj się na istniejące konto pracownika" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="243"/>
+        <Button x:Name="LoginButton3" Content="Logowanie" Grid.Column="2" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" Width="75" Click="LogInButton3Clicked" Height="22"/>
+        <Label Content="Zaloguj sie na istniejące konto administratora" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" Grid.Column="2" Height="26" Width="263"/>
+
+    </Grid>
+</Window>

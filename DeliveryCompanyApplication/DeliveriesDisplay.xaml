@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.DeliveriesDisplay"
+        Title="Wyświetlanie przesyłek" Height="359.702" Width="704.477" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="pRZESYŁKIViewSource" Source="{Binding PRZESYŁKI, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource pRZESYŁKIViewSource}">
+
+        <DataGrid x:Name="pRZESYŁKIDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_PRZESYŁKIColumn" Width="SizeToHeader" Header="ID PRZESYŁKI" Binding="{Binding ID_PRZESYŁKI}"/>
+                <DataGridTextColumn x:Name="iD_NADAWCYColumn" Width="SizeToHeader" Header="ID NADAWCY" Binding="{Binding ID_NADAWCY}"/>
+                <DataGridTextColumn x:Name="iD_ODBIORCYColumn" Width="SizeToHeader" Header="ID ODBIORCY" Binding="{Binding ID_ODBIORCY}"/>
+                <DataGridTextColumn x:Name="iD_KURIERA_DOSTARCZAJĄCEGOColumn" Width="SizeToHeader" Header="ID KURIERA" Binding="{Binding ID_KURIERA_DOSTARCZAJĄCEGO}"/>
+                <DataGridTextColumn x:Name="tYP_PRZESYŁKIColumn" Width="SizeToHeader" Header="TYP PRZESYŁKI" Binding="{Binding TYP_PRZESYŁKI}"/>
+                <DataGridTextColumn x:Name="sTATUS_PRZESYŁKIColumn" Width="SizeToHeader" Header="STATUS PRZESYŁKI" Binding="{Binding STATUS_PRZESYŁKI}"/>
+                <DataGridTextColumn x:Name="iD_ADRESU_POCZĄTKOWEGOColumn" Width="SizeToHeader" Header="ID ADRESU POCZĄTKOWEGO" Binding="{Binding ID_ADRESU_POCZĄTKOWEGO}"/>
+                <DataGridTextColumn x:Name="iD_ADRESU_KOŃCOWEGOColumn" Width="SizeToHeader" Header="ID ADRESU KOŃCOWEGO" Binding="{Binding ID_ADRESU_KOŃCOWEGO}"/>
+                <DataGridTextColumn x:Name="iD_PŁATNOŚCIColumn" Width="SizeToHeader" Header="ID PŁATNOŚCI" Binding="{Binding ID_PŁATNOŚCI}"/>
+                <DataGridTemplateColumn x:Name="dATA_NADANIA_PRZESYŁKIColumn" Width="SizeToHeader" Header="DATA NADANIA">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DATA_NADANIA_PRZESYŁKI, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn x:Name="dATA_ODEBRANIA_PRZESYŁKIColumn" Width="SizeToHeader" Header="DATA ODEBRANIA">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DATA_ODEBRANIA_PRZESYŁKI, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="kOSZT_PRZESYŁKIColumn" Width="SizeToHeader" Header="KOSZT PRZESYŁKI" Binding="{Binding KOSZT_PRZESYŁKI}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

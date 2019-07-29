@@ -1,0 +1,1865 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADRESY">
+          <Key>
+            <PropertyRef Name="ID_ADRESU" />
+          </Key>
+          <Property Name="ID_ADRESU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ULICA" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="NUMER_DOMU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NUMER_MIESZKANIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="KOD_POCZTOWY" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="MIASTO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="WOJEWÓDZTWO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PAŃSTWO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KONTA">
+          <Key>
+            <PropertyRef Name="ID_KONTA" />
+          </Key>
+          <Property Name="ID_KONTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NICK" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="TYP_KONTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HASŁO" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="MAIL" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KURIERZY_POJAZDY">
+          <Key>
+            <PropertyRef Name="ID_KURIERA" />
+            <PropertyRef Name="ID_POJAZDU" />
+            <PropertyRef Name="DATA_UŻYCIA" />
+          </Key>
+          <Property Name="ID_KURIERA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_POJAZDU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DATA_UŻYCIA" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOKALIZACJE">
+          <Key>
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_LOKALIZACJI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_LOKALIZACJI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_LOKALIZACJI" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MIASTA">
+          <Key>
+            <PropertyRef Name="ID_MIASTA" />
+          </Key>
+          <Property Name="ID_MIASTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="WOJEWÓDZTWO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MIASTO" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NADAWCY">
+          <Key>
+            <PropertyRef Name="ID_NADAWCY" />
+          </Key>
+          <Property Name="ID_NADAWCY" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_KONTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_ZAMIESZKANIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PIERWSZE_IMIE" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DRUGIE_IMIE" Type="varchar2" MaxLength="100" />
+          <Property Name="NAZWISKO" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ODBIORCY">
+          <Key>
+            <PropertyRef Name="ID_ODBIORCY" />
+          </Key>
+          <Property Name="ID_ODBIORCY" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_ZAMIESZKANIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PIERWSZE_IMIE" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DRUGIE_IMIE" Type="varchar2" MaxLength="100" />
+          <Property Name="NAZWISKO" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PACZKI">
+          <Key>
+            <PropertyRef Name="ID_PACZKI" />
+          </Key>
+          <Property Name="ID_PACZKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PRZESYŁKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PACZKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MASA_PACZKI" Type="float" Precision="63" Scale="0" Nullable="false" />
+          <Property Name="WYMIARY_PACZKI" Type="float" Precision="63" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PAŃSTWA">
+          <Key>
+            <PropertyRef Name="ID_PAŃSTWA" />
+          </Key>
+          <Property Name="ID_PAŃSTWA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PAŃSTWO" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PŁATNOŚCI">
+          <Key>
+            <PropertyRef Name="ID_PŁATNOŚCI" />
+          </Key>
+          <Property Name="ID_PŁATNOŚCI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PŁATNOŚCI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPIS_PŁATNOŚCI" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="POJAZDY_KURIERSKIE">
+          <Key>
+            <PropertyRef Name="ID_POJAZDU" />
+          </Key>
+          <Property Name="ID_POJAZDU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_POJAZDU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NUMER_REJESTRACYJNY" Type="varchar2" MaxLength="100" />
+          <Property Name="MARKA_POJAZDU" Type="varchar2" MaxLength="100" />
+          <Property Name="DATA_NASTĘPNEGO_PRZEGLĄDU" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRACOWNICY">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIKA" />
+          </Key>
+          <Property Name="ID_PRACOWNIKA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRACOWNIKA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_ZAMIESZKANIA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_KONTA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PIERWSZE_IMIE" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DRUGIE_IMIE" Type="varchar2" MaxLength="100" />
+          <Property Name="NAZWISKO" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="WYNAGRODZENIE" Type="float" Precision="63" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRZESYŁKI">
+          <Key>
+            <PropertyRef Name="ID_PRZESYŁKI" />
+          </Key>
+          <Property Name="ID_PRZESYŁKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_NADAWCY" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ODBIORCY" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_KURIERA_DOSTARCZAJĄCEGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRZESYŁKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="STATUS_PRZESYŁKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ADRESU_POCZĄTKOWEGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ADRESU_KOŃCOWEGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PŁATNOŚCI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DATA_NADANIA_PRZESYŁKI" Type="date" Nullable="false" />
+          <Property Name="DATA_ODEBRANIA_PRZESYŁKI" Type="date" Nullable="false" />
+          <Property Name="KOSZT_PRZESYŁKI" Type="float" Precision="63" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="STATUS_PRZESYŁKI">
+          <Key>
+            <PropertyRef Name="ID_STATUSU_PRZESYŁKI" />
+          </Key>
+          <Property Name="ID_STATUSU_PRZESYŁKI" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPIS_STATUSU_PRZESYŁKI" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SZEFOWIE_PODWŁADNI">
+          <Key>
+            <PropertyRef Name="ID_SZEFA" />
+            <PropertyRef Name="ID_PODWŁADNEGO" />
+          </Key>
+          <Property Name="ID_SZEFA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PODWŁADNEGO" Type="number" Precision="38" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_KONT">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_KONTA" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_LOKALIZACJI">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_LOKALIZACJI" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_PACZEK">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PACZKI" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_PŁATNOŚCI">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PŁATNOŚCI" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_POJAZDÓW_KURIERSKICH">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_POJAZDU" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_PRACOWNIKÓW">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRACOWNIKA" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TYPY_PRZESYŁEK">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRZESYŁKI" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="WOJEWÓDZTWA">
+          <Key>
+            <PropertyRef Name="ID_WOJEWÓDZTWA" />
+          </Key>
+          <Property Name="ID_WOJEWÓDZTWA" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PAŃSTWO" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="WOJEWÓDZTWO" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ADRES_KOŃCOWY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_ADRESU_KOŃCOWEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_LOKALIZACJI">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="LOKALIZACJE">
+              <PropertyRef Name="ADRES_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_NADAWCY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="NADAWCY" Type="Self.NADAWCY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="NADAWCY">
+              <PropertyRef Name="ADRES_ZAMIESZKANIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_ODBIORCY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="ODBIORCY" Type="Self.ODBIORCY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="ODBIORCY">
+              <PropertyRef Name="ADRES_ZAMIESZKANIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_POCZĄTKOWY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_ADRESU_POCZĄTKOWEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_PRACOWNIKA">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="ADRES_ZAMIESZKANIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTO_NADAWCY">
+          <End Role="KONTA" Type="Self.KONTA" Multiplicity="1" />
+          <End Role="NADAWCY" Type="Self.NADAWCY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KONTA">
+              <PropertyRef Name="ID_KONTA" />
+            </Principal>
+            <Dependent Role="NADAWCY">
+              <PropertyRef Name="ID_KONTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTO_PRACOWNIKA">
+          <End Role="KONTA" Type="Self.KONTA" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KONTA">
+              <PropertyRef Name="ID_KONTA" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="ID_KONTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KURIER_PROWADZĄCY_POJAZD">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+          <End Role="KURIERZY_POJAZDY" Type="Self.KURIERZY_POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Principal>
+            <Dependent Role="KURIERZY_POJAZDY">
+              <PropertyRef Name="ID_KURIERA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_METODA_PŁATNOŚCI">
+          <End Role="PŁATNOŚCI" Type="Self.PŁATNOŚCI" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PŁATNOŚCI">
+              <PropertyRef Name="ID_PŁATNOŚCI" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_PŁATNOŚCI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MIASTO">
+          <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="1" />
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIASTA">
+              <PropertyRef Name="ID_MIASTA" />
+            </Principal>
+            <Dependent Role="ADRESY">
+              <PropertyRef Name="MIASTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MIASTO_W_WOJEWÓDZTWIE">
+          <End Role="WOJEWÓDZTWA" Type="Self.WOJEWÓDZTWA" Multiplicity="1" />
+          <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WOJEWÓDZTWA">
+              <PropertyRef Name="ID_WOJEWÓDZTWA" />
+            </Principal>
+            <Dependent Role="MIASTA">
+              <PropertyRef Name="WOJEWÓDZTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PACZKA_W_LOKALIZACJI">
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="1" />
+          <End Role="PACZKI" Type="Self.PACZKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="PACZKI">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAŃSTWO">
+          <End Role="PAŃSTWA" Type="Self.PAŃSTWA" Multiplicity="1" />
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAŃSTWA">
+              <PropertyRef Name="ID_PAŃSTWA" />
+            </Principal>
+            <Dependent Role="ADRESY">
+              <PropertyRef Name="PAŃSTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PODWŁADNY">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+          <End Role="SZEFOWIE_PODWŁADNI" Type="Self.SZEFOWIE_PODWŁADNI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Principal>
+            <Dependent Role="SZEFOWIE_PODWŁADNI">
+              <PropertyRef Name="ID_PODWŁADNEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POJAZD_UZYTY_PRZEZ_KURIERA">
+          <End Role="POJAZDY_KURIERSKIE" Type="Self.POJAZDY_KURIERSKIE" Multiplicity="1" />
+          <End Role="KURIERZY_POJAZDY" Type="Self.KURIERZY_POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY_KURIERSKIE">
+              <PropertyRef Name="ID_POJAZDU" />
+            </Principal>
+            <Dependent Role="KURIERZY_POJAZDY">
+              <PropertyRef Name="ID_POJAZDU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POJAZD_W_LOKALIZACJI">
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="1" />
+          <End Role="POJAZDY_KURIERSKIE" Type="Self.POJAZDY_KURIERSKIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="POJAZDY_KURIERSKIE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRACUJE_W_LOKALIZACJI">
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZESYŁKA_DO_ODBIORCY">
+          <End Role="ODBIORCY" Type="Self.ODBIORCY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ODBIORCY">
+              <PropertyRef Name="ID_ODBIORCY" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_ODBIORCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZESYŁKA_OD_NADAWCY">
+          <End Role="NADAWCY" Type="Self.NADAWCY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NADAWCY">
+              <PropertyRef Name="ID_NADAWCY" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_NADAWCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZESYŁKA_POPRZEZ_KURIERA">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_KURIERA_DOSTARCZAJĄCEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STATUS_PRZESYŁKI">
+          <End Role="STATUS_PRZESYŁKI" Type="Self.STATUS_PRZESYŁKI" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_PRZESYŁKI">
+              <PropertyRef Name="ID_STATUSU_PRZESYŁKI" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="STATUS_PRZESYŁKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SZEF">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+          <End Role="SZEFOWIE_PODWŁADNI" Type="Self.SZEFOWIE_PODWŁADNI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Principal>
+            <Dependent Role="SZEFOWIE_PODWŁADNI">
+              <PropertyRef Name="ID_SZEFA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_KONTA">
+          <End Role="TYPY_KONT" Type="Self.TYPY_KONT" Multiplicity="1" />
+          <End Role="KONTA" Type="Self.KONTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_KONT">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="KONTA">
+              <PropertyRef Name="TYP_KONTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_LOKALIZACJI">
+          <End Role="TYPY_LOKALIZACJI" Type="Self.TYPY_LOKALIZACJI" Multiplicity="1" />
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_LOKALIZACJI">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="LOKALIZACJE">
+              <PropertyRef Name="TYP_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PACZKI">
+          <End Role="TYPY_PACZEK" Type="Self.TYPY_PACZEK" Multiplicity="1" />
+          <End Role="PACZKI" Type="Self.PACZKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PACZEK">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PACZKI">
+              <PropertyRef Name="TYP_PACZKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PŁATNOŚCI">
+          <End Role="TYPY_PŁATNOŚCI" Type="Self.TYPY_PŁATNOŚCI" Multiplicity="1" />
+          <End Role="PŁATNOŚCI" Type="Self.PŁATNOŚCI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PŁATNOŚCI">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PŁATNOŚCI">
+              <PropertyRef Name="TYP_PŁATNOŚCI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_POJAZDU">
+          <End Role="TYPY_POJAZDÓW_KURIERSKICH" Type="Self.TYPY_POJAZDÓW_KURIERSKICH" Multiplicity="1" />
+          <End Role="POJAZDY_KURIERSKIE" Type="Self.POJAZDY_KURIERSKIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_POJAZDÓW_KURIERSKICH">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="POJAZDY_KURIERSKIE">
+              <PropertyRef Name="TYP_POJAZDU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PRACOWNIKA">
+          <End Role="TYPY_PRACOWNIKÓW" Type="Self.TYPY_PRACOWNIKÓW" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PRACOWNIKÓW">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="TYP_PRACOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PRZESYŁKI">
+          <End Role="TYPY_PRZESYŁEK" Type="Self.TYPY_PRZESYŁEK" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PRZESYŁEK">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="TYP_PRZESYŁKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WOJEWÓDZTWO">
+          <End Role="WOJEWÓDZTWA" Type="Self.WOJEWÓDZTWA" Multiplicity="1" />
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WOJEWÓDZTWA">
+              <PropertyRef Name="ID_WOJEWÓDZTWA" />
+            </Principal>
+            <Dependent Role="ADRESY">
+              <PropertyRef Name="WOJEWÓDZTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WOJEWÓDZTWO_W_PAŃSTWIE">
+          <End Role="PAŃSTWA" Type="Self.PAŃSTWA" Multiplicity="1" />
+          <End Role="WOJEWÓDZTWA" Type="Self.WOJEWÓDZTWA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAŃSTWA">
+              <PropertyRef Name="ID_PAŃSTWA" />
+            </Principal>
+            <Dependent Role="WOJEWÓDZTWA">
+              <PropertyRef Name="PAŃSTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZAWARTA_W_PRZESYŁCE">
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="1" />
+          <End Role="PACZKI" Type="Self.PACZKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRZESYŁKI">
+              <PropertyRef Name="ID_PRZESYŁKI" />
+            </Principal>
+            <Dependent Role="PACZKI">
+              <PropertyRef Name="ID_PRZESYŁKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GENERUJ_ADRESY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_KONTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_KURIERZY_POJAZDY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_LOKALIZACJE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_NADAWCÓW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_ODBIORCÓW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_PACZKI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_PŁATNOŚCI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_POJAZDY" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_PRACOWNIKÓW" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_PRZESYŁKI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <Function Name="GENERUJ_SZEFOWIE_PODWŁADNI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="MWEIGLE" />
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="ADRESY" EntityType="Self.ADRESY" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="KONTA" EntityType="Self.KONTA" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="KURIERZY_POJAZDY" EntityType="Self.KURIERZY_POJAZDY" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="LOKALIZACJE" EntityType="Self.LOKALIZACJE" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="MIASTA" EntityType="Self.MIASTA" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="NADAWCY" EntityType="Self.NADAWCY" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="ODBIORCY" EntityType="Self.ODBIORCY" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="PACZKI" EntityType="Self.PACZKI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="PAŃSTWA" EntityType="Self.PAŃSTWA" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="PŁATNOŚCI" EntityType="Self.PŁATNOŚCI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="POJAZDY_KURIERSKIE" EntityType="Self.POJAZDY_KURIERSKIE" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="PRACOWNICY" EntityType="Self.PRACOWNICY" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="PRZESYŁKI" EntityType="Self.PRZESYŁKI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="STATUS_PRZESYŁKI" EntityType="Self.STATUS_PRZESYŁKI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="SZEFOWIE_PODWŁADNI" EntityType="Self.SZEFOWIE_PODWŁADNI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_KONT" EntityType="Self.TYPY_KONT" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_LOKALIZACJI" EntityType="Self.TYPY_LOKALIZACJI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_PACZEK" EntityType="Self.TYPY_PACZEK" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_PŁATNOŚCI" EntityType="Self.TYPY_PŁATNOŚCI" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_POJAZDÓW_KURIERSKICH" EntityType="Self.TYPY_POJAZDÓW_KURIERSKICH" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_PRACOWNIKÓW" EntityType="Self.TYPY_PRACOWNIKÓW" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="TYPY_PRZESYŁEK" EntityType="Self.TYPY_PRZESYŁEK" Schema="MWEIGLE" store:Type="Tables" />
+          <EntitySet Name="WOJEWÓDZTWA" EntityType="Self.WOJEWÓDZTWA" Schema="MWEIGLE" store:Type="Tables" />
+          <AssociationSet Name="FK_ADRES_KOŃCOWY" Association="Self.FK_ADRES_KOŃCOWY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_LOKALIZACJI" Association="Self.FK_ADRES_LOKALIZACJI">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_NADAWCY" Association="Self.FK_ADRES_NADAWCY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="NADAWCY" EntitySet="NADAWCY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_ODBIORCY" Association="Self.FK_ADRES_ODBIORCY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="ODBIORCY" EntitySet="ODBIORCY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_POCZĄTKOWY" Association="Self.FK_ADRES_POCZĄTKOWY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_PRACOWNIKA" Association="Self.FK_ADRES_PRACOWNIKA">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTO_NADAWCY" Association="Self.FK_KONTO_NADAWCY">
+            <End Role="KONTA" EntitySet="KONTA" />
+            <End Role="NADAWCY" EntitySet="NADAWCY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTO_PRACOWNIKA" Association="Self.FK_KONTO_PRACOWNIKA">
+            <End Role="KONTA" EntitySet="KONTA" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KURIER_PROWADZĄCY_POJAZD" Association="Self.FK_KURIER_PROWADZĄCY_POJAZD">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="KURIERZY_POJAZDY" EntitySet="KURIERZY_POJAZDY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_METODA_PŁATNOŚCI" Association="Self.FK_METODA_PŁATNOŚCI">
+            <End Role="PŁATNOŚCI" EntitySet="PŁATNOŚCI" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MIASTO" Association="Self.FK_MIASTO">
+            <End Role="MIASTA" EntitySet="MIASTA" />
+            <End Role="ADRESY" EntitySet="ADRESY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MIASTO_W_WOJEWÓDZTWIE" Association="Self.FK_MIASTO_W_WOJEWÓDZTWIE">
+            <End Role="WOJEWÓDZTWA" EntitySet="WOJEWÓDZTWA" />
+            <End Role="MIASTA" EntitySet="MIASTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PACZKA_W_LOKALIZACJI" Association="Self.FK_PACZKA_W_LOKALIZACJI">
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+            <End Role="PACZKI" EntitySet="PACZKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAŃSTWO" Association="Self.FK_PAŃSTWO">
+            <End Role="PAŃSTWA" EntitySet="PAŃSTWA" />
+            <End Role="ADRESY" EntitySet="ADRESY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PODWŁADNY" Association="Self.FK_PODWŁADNY">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="SZEFOWIE_PODWŁADNI" EntitySet="SZEFOWIE_PODWŁADNI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POJAZD_UZYTY_PRZEZ_KURIERA" Association="Self.FK_POJAZD_UZYTY_PRZEZ_KURIERA">
+            <End Role="POJAZDY_KURIERSKIE" EntitySet="POJAZDY_KURIERSKIE" />
+            <End Role="KURIERZY_POJAZDY" EntitySet="KURIERZY_POJAZDY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POJAZD_W_LOKALIZACJI" Association="Self.FK_POJAZD_W_LOKALIZACJI">
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+            <End Role="POJAZDY_KURIERSKIE" EntitySet="POJAZDY_KURIERSKIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRACUJE_W_LOKALIZACJI" Association="Self.FK_PRACUJE_W_LOKALIZACJI">
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZESYŁKA_DO_ODBIORCY" Association="Self.FK_PRZESYŁKA_DO_ODBIORCY">
+            <End Role="ODBIORCY" EntitySet="ODBIORCY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZESYŁKA_OD_NADAWCY" Association="Self.FK_PRZESYŁKA_OD_NADAWCY">
+            <End Role="NADAWCY" EntitySet="NADAWCY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZESYŁKA_POPRZEZ_KURIERA" Association="Self.FK_PRZESYŁKA_POPRZEZ_KURIERA">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STATUS_PRZESYŁKI" Association="Self.FK_STATUS_PRZESYŁKI">
+            <End Role="STATUS_PRZESYŁKI" EntitySet="STATUS_PRZESYŁKI" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SZEF" Association="Self.FK_SZEF">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="SZEFOWIE_PODWŁADNI" EntitySet="SZEFOWIE_PODWŁADNI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_KONTA" Association="Self.FK_TYP_KONTA">
+            <End Role="TYPY_KONT" EntitySet="TYPY_KONT" />
+            <End Role="KONTA" EntitySet="KONTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_LOKALIZACJI" Association="Self.FK_TYP_LOKALIZACJI">
+            <End Role="TYPY_LOKALIZACJI" EntitySet="TYPY_LOKALIZACJI" />
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PACZKI" Association="Self.FK_TYP_PACZKI">
+            <End Role="TYPY_PACZEK" EntitySet="TYPY_PACZEK" />
+            <End Role="PACZKI" EntitySet="PACZKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PŁATNOŚCI" Association="Self.FK_TYP_PŁATNOŚCI">
+            <End Role="TYPY_PŁATNOŚCI" EntitySet="TYPY_PŁATNOŚCI" />
+            <End Role="PŁATNOŚCI" EntitySet="PŁATNOŚCI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_POJAZDU" Association="Self.FK_TYP_POJAZDU">
+            <End Role="TYPY_POJAZDÓW_KURIERSKICH" EntitySet="TYPY_POJAZDÓW_KURIERSKICH" />
+            <End Role="POJAZDY_KURIERSKIE" EntitySet="POJAZDY_KURIERSKIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PRACOWNIKA" Association="Self.FK_TYP_PRACOWNIKA">
+            <End Role="TYPY_PRACOWNIKÓW" EntitySet="TYPY_PRACOWNIKÓW" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PRZESYŁKI" Association="Self.FK_TYP_PRZESYŁKI">
+            <End Role="TYPY_PRZESYŁEK" EntitySet="TYPY_PRZESYŁEK" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WOJEWÓDZTWO" Association="Self.FK_WOJEWÓDZTWO">
+            <End Role="WOJEWÓDZTWA" EntitySet="WOJEWÓDZTWA" />
+            <End Role="ADRESY" EntitySet="ADRESY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WOJEWÓDZTWO_W_PAŃSTWIE" Association="Self.FK_WOJEWÓDZTWO_W_PAŃSTWIE">
+            <End Role="PAŃSTWA" EntitySet="PAŃSTWA" />
+            <End Role="WOJEWÓDZTWA" EntitySet="WOJEWÓDZTWA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZAWARTA_W_PRZESYŁCE" Association="Self.FK_ZAWARTA_W_PRZESYŁCE">
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+            <End Role="PACZKI" EntitySet="PACZKI" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADRESY">
+          <Key>
+            <PropertyRef Name="ID_ADRESU" />
+          </Key>
+          <Property Name="ID_ADRESU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ULICA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NUMER_DOMU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NUMER_MIESZKANIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="KOD_POCZTOWY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MIASTO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="WOJEWÓDZTWO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PAŃSTWO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_ADRES_KOŃCOWY" FromRole="ADRESY" ToRole="PRZESYŁKI" />
+          <NavigationProperty Name="LOKALIZACJE" Relationship="Self.FK_ADRES_LOKALIZACJI" FromRole="ADRESY" ToRole="LOKALIZACJE" />
+          <NavigationProperty Name="NADAWCY" Relationship="Self.FK_ADRES_NADAWCY" FromRole="ADRESY" ToRole="NADAWCY" />
+          <NavigationProperty Name="ODBIORCY" Relationship="Self.FK_ADRES_ODBIORCY" FromRole="ADRESY" ToRole="ODBIORCY" />
+          <NavigationProperty Name="PRZESYŁKI1" Relationship="Self.FK_ADRES_POCZĄTKOWY" FromRole="ADRESY" ToRole="PRZESYŁKI" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_ADRES_PRACOWNIKA" FromRole="ADRESY" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="MIASTA" Relationship="Self.FK_MIASTO" FromRole="ADRESY" ToRole="MIASTA" />
+          <NavigationProperty Name="PAŃSTWA" Relationship="Self.FK_PAŃSTWO" FromRole="ADRESY" ToRole="PAŃSTWA" />
+          <NavigationProperty Name="WOJEWÓDZTWA" Relationship="Self.FK_WOJEWÓDZTWO" FromRole="ADRESY" ToRole="WOJEWÓDZTWA" />
+        </EntityType>
+        <EntityType Name="KONTA">
+          <Key>
+            <PropertyRef Name="ID_KONTA" />
+          </Key>
+          <Property Name="ID_KONTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NICK" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TYP_KONTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="HASŁO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="NADAWCY" Relationship="Self.FK_KONTO_NADAWCY" FromRole="KONTA" ToRole="NADAWCY" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_KONTO_PRACOWNIKA" FromRole="KONTA" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="TYPY_KONT" Relationship="Self.FK_TYP_KONTA" FromRole="KONTA" ToRole="TYPY_KONT" />
+        </EntityType>
+        <EntityType Name="KURIERZY_POJAZDY">
+          <Key>
+            <PropertyRef Name="ID_KURIERA" />
+            <PropertyRef Name="ID_POJAZDU" />
+            <PropertyRef Name="DATA_UŻYCIA" />
+          </Key>
+          <Property Name="ID_KURIERA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_POJAZDU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DATA_UŻYCIA" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_KURIER_PROWADZĄCY_POJAZD" FromRole="KURIERZY_POJAZDY" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="POJAZDY_KURIERSKIE" Relationship="Self.FK_POJAZD_UZYTY_PRZEZ_KURIERA" FromRole="KURIERZY_POJAZDY" ToRole="POJAZDY_KURIERSKIE" />
+        </EntityType>
+        <EntityType Name="LOKALIZACJE">
+          <Key>
+            <PropertyRef Name="ID_LOKALIZACJI" />
+          </Key>
+          <Property Name="ID_LOKALIZACJI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_LOKALIZACJI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_LOKALIZACJI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_ADRES_LOKALIZACJI" FromRole="LOKALIZACJE" ToRole="ADRESY" />
+          <NavigationProperty Name="PACZKI" Relationship="Self.FK_PACZKA_W_LOKALIZACJI" FromRole="LOKALIZACJE" ToRole="PACZKI" />
+          <NavigationProperty Name="POJAZDY_KURIERSKIE" Relationship="Self.FK_POJAZD_W_LOKALIZACJI" FromRole="LOKALIZACJE" ToRole="POJAZDY_KURIERSKIE" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_PRACUJE_W_LOKALIZACJI" FromRole="LOKALIZACJE" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="TYPY_LOKALIZACJI" Relationship="Self.FK_TYP_LOKALIZACJI" FromRole="LOKALIZACJE" ToRole="TYPY_LOKALIZACJI" />
+        </EntityType>
+        <EntityType Name="MIASTA">
+          <Key>
+            <PropertyRef Name="ID_MIASTA" />
+          </Key>
+          <Property Name="ID_MIASTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="WOJEWÓDZTWO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MIASTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_MIASTO" FromRole="MIASTA" ToRole="ADRESY" />
+          <NavigationProperty Name="WOJEWÓDZTWA" Relationship="Self.FK_MIASTO_W_WOJEWÓDZTWIE" FromRole="MIASTA" ToRole="WOJEWÓDZTWA" />
+        </EntityType>
+        <EntityType Name="NADAWCY">
+          <Key>
+            <PropertyRef Name="ID_NADAWCY" />
+          </Key>
+          <Property Name="ID_NADAWCY" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_KONTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_ZAMIESZKANIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PIERWSZE_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DRUGIE_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_ADRES_NADAWCY" FromRole="NADAWCY" ToRole="ADRESY" />
+          <NavigationProperty Name="KONTA" Relationship="Self.FK_KONTO_NADAWCY" FromRole="NADAWCY" ToRole="KONTA" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_PRZESYŁKA_OD_NADAWCY" FromRole="NADAWCY" ToRole="PRZESYŁKI" />
+        </EntityType>
+        <EntityType Name="ODBIORCY">
+          <Key>
+            <PropertyRef Name="ID_ODBIORCY" />
+          </Key>
+          <Property Name="ID_ODBIORCY" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_ZAMIESZKANIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PIERWSZE_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DRUGIE_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_ADRES_ODBIORCY" FromRole="ODBIORCY" ToRole="ADRESY" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_PRZESYŁKA_DO_ODBIORCY" FromRole="ODBIORCY" ToRole="PRZESYŁKI" />
+        </EntityType>
+        <EntityType Name="PACZKI">
+          <Key>
+            <PropertyRef Name="ID_PACZKI" />
+          </Key>
+          <Property Name="ID_PACZKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PRZESYŁKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PACZKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="MASA_PACZKI" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <Property Name="WYMIARY_PACZKI" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <NavigationProperty Name="LOKALIZACJE" Relationship="Self.FK_PACZKA_W_LOKALIZACJI" FromRole="PACZKI" ToRole="LOKALIZACJE" />
+          <NavigationProperty Name="TYPY_PACZEK" Relationship="Self.FK_TYP_PACZKI" FromRole="PACZKI" ToRole="TYPY_PACZEK" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_ZAWARTA_W_PRZESYŁCE" FromRole="PACZKI" ToRole="PRZESYŁKI" />
+        </EntityType>
+        <EntityType Name="PAŃSTWA">
+          <Key>
+            <PropertyRef Name="ID_PAŃSTWA" />
+          </Key>
+          <Property Name="ID_PAŃSTWA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PAŃSTWO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_PAŃSTWO" FromRole="PAŃSTWA" ToRole="ADRESY" />
+          <NavigationProperty Name="WOJEWÓDZTWA" Relationship="Self.FK_WOJEWÓDZTWO_W_PAŃSTWIE" FromRole="PAŃSTWA" ToRole="WOJEWÓDZTWA" />
+        </EntityType>
+        <EntityType Name="PŁATNOŚCI">
+          <Key>
+            <PropertyRef Name="ID_PŁATNOŚCI" />
+          </Key>
+          <Property Name="ID_PŁATNOŚCI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PŁATNOŚCI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPIS_PŁATNOŚCI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_METODA_PŁATNOŚCI" FromRole="PŁATNOŚCI" ToRole="PRZESYŁKI" />
+          <NavigationProperty Name="TYPY_PŁATNOŚCI" Relationship="Self.FK_TYP_PŁATNOŚCI" FromRole="PŁATNOŚCI" ToRole="TYPY_PŁATNOŚCI" />
+        </EntityType>
+        <EntityType Name="POJAZDY_KURIERSKIE">
+          <Key>
+            <PropertyRef Name="ID_POJAZDU" />
+          </Key>
+          <Property Name="ID_POJAZDU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_POJAZDU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NUMER_REJESTRACYJNY" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MARKA_POJAZDU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DATA_NASTĘPNEGO_PRZEGLĄDU" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="KURIERZY_POJAZDY" Relationship="Self.FK_POJAZD_UZYTY_PRZEZ_KURIERA" FromRole="POJAZDY_KURIERSKIE" ToRole="KURIERZY_POJAZDY" />
+          <NavigationProperty Name="LOKALIZACJE" Relationship="Self.FK_POJAZD_W_LOKALIZACJI" FromRole="POJAZDY_KURIERSKIE" ToRole="LOKALIZACJE" />
+          <NavigationProperty Name="TYPY_POJAZDÓW_KURIERSKICH" Relationship="Self.FK_TYP_POJAZDU" FromRole="POJAZDY_KURIERSKIE" ToRole="TYPY_POJAZDÓW_KURIERSKICH" />
+        </EntityType>
+        <EntityType Name="PRACOWNICY">
+          <Key>
+            <PropertyRef Name="ID_PRACOWNIKA" />
+          </Key>
+          <Property Name="ID_PRACOWNIKA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRACOWNIKA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ADRES_ZAMIESZKANIA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_LOKALIZACJI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_KONTA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PIERWSZE_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DRUGIE_IMIE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NAZWISKO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="WYNAGRODZENIE" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_ADRES_PRACOWNIKA" FromRole="PRACOWNICY" ToRole="ADRESY" />
+          <NavigationProperty Name="KONTA" Relationship="Self.FK_KONTO_PRACOWNIKA" FromRole="PRACOWNICY" ToRole="KONTA" />
+          <NavigationProperty Name="KURIERZY_POJAZDY" Relationship="Self.FK_KURIER_PROWADZĄCY_POJAZD" FromRole="PRACOWNICY" ToRole="KURIERZY_POJAZDY" />
+          <NavigationProperty Name="LOKALIZACJE" Relationship="Self.FK_PRACUJE_W_LOKALIZACJI" FromRole="PRACOWNICY" ToRole="LOKALIZACJE" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_PRZESYŁKA_POPRZEZ_KURIERA" FromRole="PRACOWNICY" ToRole="PRZESYŁKI" />
+          <NavigationProperty Name="TYPY_PRACOWNIKÓW" Relationship="Self.FK_TYP_PRACOWNIKA" FromRole="PRACOWNICY" ToRole="TYPY_PRACOWNIKÓW" />
+          <NavigationProperty Name="PRACOWNICY1" Relationship="Self.SZEFOWIE_PODWŁADNI" FromRole="PRACOWNICY" ToRole="PRACOWNICY1" />
+          <NavigationProperty Name="PRACOWNICY2" Relationship="Self.SZEFOWIE_PODWŁADNI" FromRole="PRACOWNICY1" ToRole="PRACOWNICY" />
+        </EntityType>
+        <EntityType Name="PRZESYŁKI">
+          <Key>
+            <PropertyRef Name="ID_PRZESYŁKI" />
+          </Key>
+          <Property Name="ID_PRZESYŁKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_NADAWCY" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ODBIORCY" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_KURIERA_DOSTARCZAJĄCEGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRZESYŁKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="STATUS_PRZESYŁKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ADRESU_POCZĄTKOWEGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_ADRESU_KOŃCOWEGO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ID_PŁATNOŚCI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DATA_NADANIA_PRZESYŁKI" Type="DateTime" Nullable="false" />
+          <Property Name="DATA_ODEBRANIA_PRZESYŁKI" Type="DateTime" Nullable="false" />
+          <Property Name="KOSZT_PRZESYŁKI" Type="Decimal" Precision="19" Scale="0" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_ADRES_KOŃCOWY" FromRole="PRZESYŁKI" ToRole="ADRESY" />
+          <NavigationProperty Name="ADRESY1" Relationship="Self.FK_ADRES_POCZĄTKOWY" FromRole="PRZESYŁKI" ToRole="ADRESY" />
+          <NavigationProperty Name="NADAWCY" Relationship="Self.FK_PRZESYŁKA_OD_NADAWCY" FromRole="PRZESYŁKI" ToRole="NADAWCY" />
+          <NavigationProperty Name="ODBIORCY" Relationship="Self.FK_PRZESYŁKA_DO_ODBIORCY" FromRole="PRZESYŁKI" ToRole="ODBIORCY" />
+          <NavigationProperty Name="PACZKI" Relationship="Self.FK_ZAWARTA_W_PRZESYŁCE" FromRole="PRZESYŁKI" ToRole="PACZKI" />
+          <NavigationProperty Name="PŁATNOŚCI" Relationship="Self.FK_METODA_PŁATNOŚCI" FromRole="PRZESYŁKI" ToRole="PŁATNOŚCI" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_PRZESYŁKA_POPRZEZ_KURIERA" FromRole="PRZESYŁKI" ToRole="PRACOWNICY" />
+          <NavigationProperty Name="STATUS_PRZESYŁKI1" Relationship="Self.FK_STATUS_PRZESYŁKI" FromRole="PRZESYŁKI" ToRole="STATUS_PRZESYŁKI" />
+          <NavigationProperty Name="TYPY_PRZESYŁEK" Relationship="Self.FK_TYP_PRZESYŁKI" FromRole="PRZESYŁKI" ToRole="TYPY_PRZESYŁEK" />
+        </EntityType>
+        <EntityType Name="STATUS_PRZESYŁKI">
+          <Key>
+            <PropertyRef Name="ID_STATUSU_PRZESYŁKI" />
+          </Key>
+          <Property Name="ID_STATUSU_PRZESYŁKI" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="OPIS_STATUSU_PRZESYŁKI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_STATUS_PRZESYŁKI" FromRole="STATUS_PRZESYŁKI" ToRole="PRZESYŁKI" />
+        </EntityType>
+        <EntityType Name="TYPY_KONT">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_KONTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="KONTA" Relationship="Self.FK_TYP_KONTA" FromRole="TYPY_KONT" ToRole="KONTA" />
+        </EntityType>
+        <EntityType Name="TYPY_LOKALIZACJI">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_LOKALIZACJI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="LOKALIZACJE" Relationship="Self.FK_TYP_LOKALIZACJI" FromRole="TYPY_LOKALIZACJI" ToRole="LOKALIZACJE" />
+        </EntityType>
+        <EntityType Name="TYPY_PACZEK">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PACZKI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PACZKI" Relationship="Self.FK_TYP_PACZKI" FromRole="TYPY_PACZEK" ToRole="PACZKI" />
+        </EntityType>
+        <EntityType Name="TYPY_PŁATNOŚCI">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PŁATNOŚCI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PŁATNOŚCI" Relationship="Self.FK_TYP_PŁATNOŚCI" FromRole="TYPY_PŁATNOŚCI" ToRole="PŁATNOŚCI" />
+        </EntityType>
+        <EntityType Name="TYPY_POJAZDÓW_KURIERSKICH">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_POJAZDU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="POJAZDY_KURIERSKIE" Relationship="Self.FK_TYP_POJAZDU" FromRole="TYPY_POJAZDÓW_KURIERSKICH" ToRole="POJAZDY_KURIERSKIE" />
+        </EntityType>
+        <EntityType Name="TYPY_PRACOWNIKÓW">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRACOWNIKA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRACOWNICY" Relationship="Self.FK_TYP_PRACOWNIKA" FromRole="TYPY_PRACOWNIKÓW" ToRole="PRACOWNICY" />
+        </EntityType>
+        <EntityType Name="TYPY_PRZESYŁEK">
+          <Key>
+            <PropertyRef Name="ID_TYPU" />
+          </Key>
+          <Property Name="ID_TYPU" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TYP_PRZESYŁKI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="PRZESYŁKI" Relationship="Self.FK_TYP_PRZESYŁKI" FromRole="TYPY_PRZESYŁEK" ToRole="PRZESYŁKI" />
+        </EntityType>
+        <EntityType Name="WOJEWÓDZTWA">
+          <Key>
+            <PropertyRef Name="ID_WOJEWÓDZTWA" />
+          </Key>
+          <Property Name="ID_WOJEWÓDZTWA" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PAŃSTWO" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="WOJEWÓDZTWO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ADRESY" Relationship="Self.FK_WOJEWÓDZTWO" FromRole="WOJEWÓDZTWA" ToRole="ADRESY" />
+          <NavigationProperty Name="MIASTA" Relationship="Self.FK_MIASTO_W_WOJEWÓDZTWIE" FromRole="WOJEWÓDZTWA" ToRole="MIASTA" />
+          <NavigationProperty Name="PAŃSTWA" Relationship="Self.FK_WOJEWÓDZTWO_W_PAŃSTWIE" FromRole="WOJEWÓDZTWA" ToRole="PAŃSTWA" />
+        </EntityType>
+        <Association Name="FK_ADRES_KOŃCOWY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_ADRESU_KOŃCOWEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_LOKALIZACJI">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="LOKALIZACJE">
+              <PropertyRef Name="ADRES_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_NADAWCY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="NADAWCY" Type="Self.NADAWCY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="NADAWCY">
+              <PropertyRef Name="ADRES_ZAMIESZKANIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_ODBIORCY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="ODBIORCY" Type="Self.ODBIORCY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="ODBIORCY">
+              <PropertyRef Name="ADRES_ZAMIESZKANIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_POCZĄTKOWY">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_ADRESU_POCZĄTKOWEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ADRES_PRACOWNIKA">
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ADRESY">
+              <PropertyRef Name="ID_ADRESU" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="ADRES_ZAMIESZKANIA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MIASTO">
+          <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="1" />
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MIASTA">
+              <PropertyRef Name="ID_MIASTA" />
+            </Principal>
+            <Dependent Role="ADRESY">
+              <PropertyRef Name="MIASTO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PAŃSTWO">
+          <End Role="PAŃSTWA" Type="Self.PAŃSTWA" Multiplicity="1" />
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAŃSTWA">
+              <PropertyRef Name="ID_PAŃSTWA" />
+            </Principal>
+            <Dependent Role="ADRESY">
+              <PropertyRef Name="PAŃSTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WOJEWÓDZTWO">
+          <End Role="WOJEWÓDZTWA" Type="Self.WOJEWÓDZTWA" Multiplicity="1" />
+          <End Role="ADRESY" Type="Self.ADRESY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WOJEWÓDZTWA">
+              <PropertyRef Name="ID_WOJEWÓDZTWA" />
+            </Principal>
+            <Dependent Role="ADRESY">
+              <PropertyRef Name="WOJEWÓDZTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTO_NADAWCY">
+          <End Role="KONTA" Type="Self.KONTA" Multiplicity="1" />
+          <End Role="NADAWCY" Type="Self.NADAWCY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KONTA">
+              <PropertyRef Name="ID_KONTA" />
+            </Principal>
+            <Dependent Role="NADAWCY">
+              <PropertyRef Name="ID_KONTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KONTO_PRACOWNIKA">
+          <End Role="KONTA" Type="Self.KONTA" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KONTA">
+              <PropertyRef Name="ID_KONTA" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="ID_KONTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_KONTA">
+          <End Role="TYPY_KONT" Type="Self.TYPY_KONT" Multiplicity="1" />
+          <End Role="KONTA" Type="Self.KONTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_KONT">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="KONTA">
+              <PropertyRef Name="TYP_KONTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KURIER_PROWADZĄCY_POJAZD">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+          <End Role="KURIERZY_POJAZDY" Type="Self.KURIERZY_POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Principal>
+            <Dependent Role="KURIERZY_POJAZDY">
+              <PropertyRef Name="ID_KURIERA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POJAZD_UZYTY_PRZEZ_KURIERA">
+          <End Role="POJAZDY_KURIERSKIE" Type="Self.POJAZDY_KURIERSKIE" Multiplicity="1" />
+          <End Role="KURIERZY_POJAZDY" Type="Self.KURIERZY_POJAZDY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POJAZDY_KURIERSKIE">
+              <PropertyRef Name="ID_POJAZDU" />
+            </Principal>
+            <Dependent Role="KURIERZY_POJAZDY">
+              <PropertyRef Name="ID_POJAZDU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PACZKA_W_LOKALIZACJI">
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="1" />
+          <End Role="PACZKI" Type="Self.PACZKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="PACZKI">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_POJAZD_W_LOKALIZACJI">
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="1" />
+          <End Role="POJAZDY_KURIERSKIE" Type="Self.POJAZDY_KURIERSKIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="POJAZDY_KURIERSKIE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRACUJE_W_LOKALIZACJI">
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOKALIZACJE">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="ID_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_LOKALIZACJI">
+          <End Role="TYPY_LOKALIZACJI" Type="Self.TYPY_LOKALIZACJI" Multiplicity="1" />
+          <End Role="LOKALIZACJE" Type="Self.LOKALIZACJE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_LOKALIZACJI">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="LOKALIZACJE">
+              <PropertyRef Name="TYP_LOKALIZACJI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MIASTO_W_WOJEWÓDZTWIE">
+          <End Role="WOJEWÓDZTWA" Type="Self.WOJEWÓDZTWA" Multiplicity="1" />
+          <End Role="MIASTA" Type="Self.MIASTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WOJEWÓDZTWA">
+              <PropertyRef Name="ID_WOJEWÓDZTWA" />
+            </Principal>
+            <Dependent Role="MIASTA">
+              <PropertyRef Name="WOJEWÓDZTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZESYŁKA_OD_NADAWCY">
+          <End Role="NADAWCY" Type="Self.NADAWCY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NADAWCY">
+              <PropertyRef Name="ID_NADAWCY" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_NADAWCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZESYŁKA_DO_ODBIORCY">
+          <End Role="ODBIORCY" Type="Self.ODBIORCY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ODBIORCY">
+              <PropertyRef Name="ID_ODBIORCY" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_ODBIORCY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PACZKI">
+          <End Role="TYPY_PACZEK" Type="Self.TYPY_PACZEK" Multiplicity="1" />
+          <End Role="PACZKI" Type="Self.PACZKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PACZEK">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PACZKI">
+              <PropertyRef Name="TYP_PACZKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZAWARTA_W_PRZESYŁCE">
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="1" />
+          <End Role="PACZKI" Type="Self.PACZKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRZESYŁKI">
+              <PropertyRef Name="ID_PRZESYŁKI" />
+            </Principal>
+            <Dependent Role="PACZKI">
+              <PropertyRef Name="ID_PRZESYŁKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WOJEWÓDZTWO_W_PAŃSTWIE">
+          <End Role="PAŃSTWA" Type="Self.PAŃSTWA" Multiplicity="1" />
+          <End Role="WOJEWÓDZTWA" Type="Self.WOJEWÓDZTWA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PAŃSTWA">
+              <PropertyRef Name="ID_PAŃSTWA" />
+            </Principal>
+            <Dependent Role="WOJEWÓDZTWA">
+              <PropertyRef Name="PAŃSTWO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_METODA_PŁATNOŚCI">
+          <End Role="PŁATNOŚCI" Type="Self.PŁATNOŚCI" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PŁATNOŚCI">
+              <PropertyRef Name="ID_PŁATNOŚCI" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_PŁATNOŚCI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PŁATNOŚCI">
+          <End Role="TYPY_PŁATNOŚCI" Type="Self.TYPY_PŁATNOŚCI" Multiplicity="1" />
+          <End Role="PŁATNOŚCI" Type="Self.PŁATNOŚCI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PŁATNOŚCI">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PŁATNOŚCI">
+              <PropertyRef Name="TYP_PŁATNOŚCI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_POJAZDU">
+          <End Role="TYPY_POJAZDÓW_KURIERSKICH" Type="Self.TYPY_POJAZDÓW_KURIERSKICH" Multiplicity="1" />
+          <End Role="POJAZDY_KURIERSKIE" Type="Self.POJAZDY_KURIERSKIE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_POJAZDÓW_KURIERSKICH">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="POJAZDY_KURIERSKIE">
+              <PropertyRef Name="TYP_POJAZDU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PRZESYŁKA_POPRZEZ_KURIERA">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRACOWNICY">
+              <PropertyRef Name="ID_PRACOWNIKA" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="ID_KURIERA_DOSTARCZAJĄCEGO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PRACOWNIKA">
+          <End Role="TYPY_PRACOWNIKÓW" Type="Self.TYPY_PRACOWNIKÓW" Multiplicity="1" />
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PRACOWNIKÓW">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PRACOWNICY">
+              <PropertyRef Name="TYP_PRACOWNIKA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_STATUS_PRZESYŁKI">
+          <End Role="STATUS_PRZESYŁKI" Type="Self.STATUS_PRZESYŁKI" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="STATUS_PRZESYŁKI">
+              <PropertyRef Name="ID_STATUSU_PRZESYŁKI" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="STATUS_PRZESYŁKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TYP_PRZESYŁKI">
+          <End Role="TYPY_PRZESYŁEK" Type="Self.TYPY_PRZESYŁEK" Multiplicity="1" />
+          <End Role="PRZESYŁKI" Type="Self.PRZESYŁKI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TYPY_PRZESYŁEK">
+              <PropertyRef Name="ID_TYPU" />
+            </Principal>
+            <Dependent Role="PRZESYŁKI">
+              <PropertyRef Name="TYP_PRZESYŁKI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SZEFOWIE_PODWŁADNI">
+          <End Role="PRACOWNICY" Type="Self.PRACOWNICY" Multiplicity="*" />
+          <End Role="PRACOWNICY1" Type="Self.PRACOWNICY" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="DatabaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADRESY" EntityType="Self.ADRESY" />
+          <EntitySet Name="KONTA" EntityType="Self.KONTA" />
+          <EntitySet Name="KURIERZY_POJAZDY" EntityType="Self.KURIERZY_POJAZDY" />
+          <EntitySet Name="LOKALIZACJE" EntityType="Self.LOKALIZACJE" />
+          <EntitySet Name="MIASTA" EntityType="Self.MIASTA" />
+          <EntitySet Name="NADAWCY" EntityType="Self.NADAWCY" />
+          <EntitySet Name="ODBIORCY" EntityType="Self.ODBIORCY" />
+          <EntitySet Name="PACZKI" EntityType="Self.PACZKI" />
+          <EntitySet Name="PAŃSTWA" EntityType="Self.PAŃSTWA" />
+          <EntitySet Name="PŁATNOŚCI" EntityType="Self.PŁATNOŚCI" />
+          <EntitySet Name="POJAZDY_KURIERSKIE" EntityType="Self.POJAZDY_KURIERSKIE" />
+          <EntitySet Name="PRACOWNICY" EntityType="Self.PRACOWNICY" />
+          <EntitySet Name="PRZESYŁKI" EntityType="Self.PRZESYŁKI" />
+          <EntitySet Name="STATUS_PRZESYŁKI" EntityType="Self.STATUS_PRZESYŁKI" />
+          <EntitySet Name="TYPY_KONT" EntityType="Self.TYPY_KONT" />
+          <EntitySet Name="TYPY_LOKALIZACJI" EntityType="Self.TYPY_LOKALIZACJI" />
+          <EntitySet Name="TYPY_PACZEK" EntityType="Self.TYPY_PACZEK" />
+          <EntitySet Name="TYPY_PŁATNOŚCI" EntityType="Self.TYPY_PŁATNOŚCI" />
+          <EntitySet Name="TYPY_POJAZDÓW_KURIERSKICH" EntityType="Self.TYPY_POJAZDÓW_KURIERSKICH" />
+          <EntitySet Name="TYPY_PRACOWNIKÓW" EntityType="Self.TYPY_PRACOWNIKÓW" />
+          <EntitySet Name="TYPY_PRZESYŁEK" EntityType="Self.TYPY_PRZESYŁEK" />
+          <EntitySet Name="WOJEWÓDZTWA" EntityType="Self.WOJEWÓDZTWA" />
+          <AssociationSet Name="FK_ADRES_KOŃCOWY" Association="Self.FK_ADRES_KOŃCOWY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_LOKALIZACJI" Association="Self.FK_ADRES_LOKALIZACJI">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_NADAWCY" Association="Self.FK_ADRES_NADAWCY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="NADAWCY" EntitySet="NADAWCY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_ODBIORCY" Association="Self.FK_ADRES_ODBIORCY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="ODBIORCY" EntitySet="ODBIORCY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_POCZĄTKOWY" Association="Self.FK_ADRES_POCZĄTKOWY">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ADRES_PRACOWNIKA" Association="Self.FK_ADRES_PRACOWNIKA">
+            <End Role="ADRESY" EntitySet="ADRESY" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MIASTO" Association="Self.FK_MIASTO">
+            <End Role="MIASTA" EntitySet="MIASTA" />
+            <End Role="ADRESY" EntitySet="ADRESY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PAŃSTWO" Association="Self.FK_PAŃSTWO">
+            <End Role="PAŃSTWA" EntitySet="PAŃSTWA" />
+            <End Role="ADRESY" EntitySet="ADRESY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WOJEWÓDZTWO" Association="Self.FK_WOJEWÓDZTWO">
+            <End Role="WOJEWÓDZTWA" EntitySet="WOJEWÓDZTWA" />
+            <End Role="ADRESY" EntitySet="ADRESY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTO_NADAWCY" Association="Self.FK_KONTO_NADAWCY">
+            <End Role="KONTA" EntitySet="KONTA" />
+            <End Role="NADAWCY" EntitySet="NADAWCY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KONTO_PRACOWNIKA" Association="Self.FK_KONTO_PRACOWNIKA">
+            <End Role="KONTA" EntitySet="KONTA" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_KONTA" Association="Self.FK_TYP_KONTA">
+            <End Role="TYPY_KONT" EntitySet="TYPY_KONT" />
+            <End Role="KONTA" EntitySet="KONTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KURIER_PROWADZĄCY_POJAZD" Association="Self.FK_KURIER_PROWADZĄCY_POJAZD">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="KURIERZY_POJAZDY" EntitySet="KURIERZY_POJAZDY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POJAZD_UZYTY_PRZEZ_KURIERA" Association="Self.FK_POJAZD_UZYTY_PRZEZ_KURIERA">
+            <End Role="POJAZDY_KURIERSKIE" EntitySet="POJAZDY_KURIERSKIE" />
+            <End Role="KURIERZY_POJAZDY" EntitySet="KURIERZY_POJAZDY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PACZKA_W_LOKALIZACJI" Association="Self.FK_PACZKA_W_LOKALIZACJI">
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+            <End Role="PACZKI" EntitySet="PACZKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_POJAZD_W_LOKALIZACJI" Association="Self.FK_POJAZD_W_LOKALIZACJI">
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+            <End Role="POJAZDY_KURIERSKIE" EntitySet="POJAZDY_KURIERSKIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRACUJE_W_LOKALIZACJI" Association="Self.FK_PRACUJE_W_LOKALIZACJI">
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_LOKALIZACJI" Association="Self.FK_TYP_LOKALIZACJI">
+            <End Role="TYPY_LOKALIZACJI" EntitySet="TYPY_LOKALIZACJI" />
+            <End Role="LOKALIZACJE" EntitySet="LOKALIZACJE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MIASTO_W_WOJEWÓDZTWIE" Association="Self.FK_MIASTO_W_WOJEWÓDZTWIE">
+            <End Role="WOJEWÓDZTWA" EntitySet="WOJEWÓDZTWA" />
+            <End Role="MIASTA" EntitySet="MIASTA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZESYŁKA_OD_NADAWCY" Association="Self.FK_PRZESYŁKA_OD_NADAWCY">
+            <End Role="NADAWCY" EntitySet="NADAWCY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZESYŁKA_DO_ODBIORCY" Association="Self.FK_PRZESYŁKA_DO_ODBIORCY">
+            <End Role="ODBIORCY" EntitySet="ODBIORCY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PACZKI" Association="Self.FK_TYP_PACZKI">
+            <End Role="TYPY_PACZEK" EntitySet="TYPY_PACZEK" />
+            <End Role="PACZKI" EntitySet="PACZKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZAWARTA_W_PRZESYŁCE" Association="Self.FK_ZAWARTA_W_PRZESYŁCE">
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+            <End Role="PACZKI" EntitySet="PACZKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WOJEWÓDZTWO_W_PAŃSTWIE" Association="Self.FK_WOJEWÓDZTWO_W_PAŃSTWIE">
+            <End Role="PAŃSTWA" EntitySet="PAŃSTWA" />
+            <End Role="WOJEWÓDZTWA" EntitySet="WOJEWÓDZTWA" />
+          </AssociationSet>
+          <AssociationSet Name="FK_METODA_PŁATNOŚCI" Association="Self.FK_METODA_PŁATNOŚCI">
+            <End Role="PŁATNOŚCI" EntitySet="PŁATNOŚCI" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PŁATNOŚCI" Association="Self.FK_TYP_PŁATNOŚCI">
+            <End Role="TYPY_PŁATNOŚCI" EntitySet="TYPY_PŁATNOŚCI" />
+            <End Role="PŁATNOŚCI" EntitySet="PŁATNOŚCI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_POJAZDU" Association="Self.FK_TYP_POJAZDU">
+            <End Role="TYPY_POJAZDÓW_KURIERSKICH" EntitySet="TYPY_POJAZDÓW_KURIERSKICH" />
+            <End Role="POJAZDY_KURIERSKIE" EntitySet="POJAZDY_KURIERSKIE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PRZESYŁKA_POPRZEZ_KURIERA" Association="Self.FK_PRZESYŁKA_POPRZEZ_KURIERA">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PRACOWNIKA" Association="Self.FK_TYP_PRACOWNIKA">
+            <End Role="TYPY_PRACOWNIKÓW" EntitySet="TYPY_PRACOWNIKÓW" />
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_STATUS_PRZESYŁKI" Association="Self.FK_STATUS_PRZESYŁKI">
+            <End Role="STATUS_PRZESYŁKI" EntitySet="STATUS_PRZESYŁKI" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TYP_PRZESYŁKI" Association="Self.FK_TYP_PRZESYŁKI">
+            <End Role="TYPY_PRZESYŁEK" EntitySet="TYPY_PRZESYŁEK" />
+            <End Role="PRZESYŁKI" EntitySet="PRZESYŁKI" />
+          </AssociationSet>
+          <AssociationSet Name="SZEFOWIE_PODWŁADNI" Association="Self.SZEFOWIE_PODWŁADNI">
+            <End Role="PRACOWNICY" EntitySet="PRACOWNICY" />
+            <End Role="PRACOWNICY1" EntitySet="PRACOWNICY" />
+          </AssociationSet>
+          <FunctionImport Name="GENERUJ_ADRESY" />
+          <FunctionImport Name="GENERUJ_KONTA" />
+          <FunctionImport Name="GENERUJ_KURIERZY_POJAZDY" />
+          <FunctionImport Name="GENERUJ_LOKALIZACJE" />
+          <FunctionImport Name="GENERUJ_NADAWCÓW" />
+          <FunctionImport Name="GENERUJ_ODBIORCÓW" />
+          <FunctionImport Name="GENERUJ_PACZKI" />
+          <FunctionImport Name="GENERUJ_PŁATNOŚCI" />
+          <FunctionImport Name="GENERUJ_POJAZDY" />
+          <FunctionImport Name="GENERUJ_PRACOWNIKÓW" />
+          <FunctionImport Name="GENERUJ_PRZESYŁKI" />
+          <FunctionImport Name="GENERUJ_SZEFOWIE_PODWŁADNI" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="ADRESY">
+            <EntityTypeMapping TypeName="Model.ADRESY">
+              <MappingFragment StoreEntitySet="ADRESY">
+                <ScalarProperty Name="ID_ADRESU" ColumnName="ID_ADRESU" />
+                <ScalarProperty Name="ULICA" ColumnName="ULICA" />
+                <ScalarProperty Name="NUMER_DOMU" ColumnName="NUMER_DOMU" />
+                <ScalarProperty Name="NUMER_MIESZKANIA" ColumnName="NUMER_MIESZKANIA" />
+                <ScalarProperty Name="KOD_POCZTOWY" ColumnName="KOD_POCZTOWY" />
+                <ScalarProperty Name="MIASTO" ColumnName="MIASTO" />
+                <ScalarProperty Name="WOJEWÓDZTWO" ColumnName="WOJEWÓDZTWO" />
+                <ScalarProperty Name="PAŃSTWO" ColumnName="PAŃSTWO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KONTA">
+            <EntityTypeMapping TypeName="Model.KONTA">
+              <MappingFragment StoreEntitySet="KONTA">
+                <ScalarProperty Name="ID_KONTA" ColumnName="ID_KONTA" />
+                <ScalarProperty Name="NICK" ColumnName="NICK" />
+                <ScalarProperty Name="TYP_KONTA" ColumnName="TYP_KONTA" />
+                <ScalarProperty Name="HASŁO" ColumnName="HASŁO" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KURIERZY_POJAZDY">
+            <EntityTypeMapping TypeName="Model.KURIERZY_POJAZDY">
+              <MappingFragment StoreEntitySet="KURIERZY_POJAZDY">
+                <ScalarProperty Name="ID_KURIERA" ColumnName="ID_KURIERA" />
+                <ScalarProperty Name="ID_POJAZDU" ColumnName="ID_POJAZDU" />
+                <ScalarProperty Name="DATA_UŻYCIA" ColumnName="DATA_UŻYCIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOKALIZACJE">
+            <EntityTypeMapping TypeName="Model.LOKALIZACJE">
+              <MappingFragment StoreEntitySet="LOKALIZACJE">
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="TYP_LOKALIZACJI" ColumnName="TYP_LOKALIZACJI" />
+                <ScalarProperty Name="ADRES_LOKALIZACJI" ColumnName="ADRES_LOKALIZACJI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MIASTA">
+            <EntityTypeMapping TypeName="Model.MIASTA">
+              <MappingFragment StoreEntitySet="MIASTA">
+                <ScalarProperty Name="ID_MIASTA" ColumnName="ID_MIASTA" />
+                <ScalarProperty Name="WOJEWÓDZTWO" ColumnName="WOJEWÓDZTWO" />
+                <ScalarProperty Name="MIASTO" ColumnName="MIASTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NADAWCY">
+            <EntityTypeMapping TypeName="Model.NADAWCY">
+              <MappingFragment StoreEntitySet="NADAWCY">
+                <ScalarProperty Name="ID_NADAWCY" ColumnName="ID_NADAWCY" />
+                <ScalarProperty Name="ID_KONTA" ColumnName="ID_KONTA" />
+                <ScalarProperty Name="ADRES_ZAMIESZKANIA" ColumnName="ADRES_ZAMIESZKANIA" />
+                <ScalarProperty Name="PIERWSZE_IMIE" ColumnName="PIERWSZE_IMIE" />
+                <ScalarProperty Name="DRUGIE_IMIE" ColumnName="DRUGIE_IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ODBIORCY">
+            <EntityTypeMapping TypeName="Model.ODBIORCY">
+              <MappingFragment StoreEntitySet="ODBIORCY">
+                <ScalarProperty Name="ID_ODBIORCY" ColumnName="ID_ODBIORCY" />
+                <ScalarProperty Name="ADRES_ZAMIESZKANIA" ColumnName="ADRES_ZAMIESZKANIA" />
+                <ScalarProperty Name="PIERWSZE_IMIE" ColumnName="PIERWSZE_IMIE" />
+                <ScalarProperty Name="DRUGIE_IMIE" ColumnName="DRUGIE_IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PACZKI">
+            <EntityTypeMapping TypeName="Model.PACZKI">
+              <MappingFragment StoreEntitySet="PACZKI">
+                <ScalarProperty Name="ID_PACZKI" ColumnName="ID_PACZKI" />
+                <ScalarProperty Name="ID_PRZESYŁKI" ColumnName="ID_PRZESYŁKI" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="TYP_PACZKI" ColumnName="TYP_PACZKI" />
+                <ScalarProperty Name="MASA_PACZKI" ColumnName="MASA_PACZKI" />
+                <ScalarProperty Name="WYMIARY_PACZKI" ColumnName="WYMIARY_PACZKI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PAŃSTWA">
+            <EntityTypeMapping TypeName="Model.PAŃSTWA">
+              <MappingFragment StoreEntitySet="PAŃSTWA">
+                <ScalarProperty Name="ID_PAŃSTWA" ColumnName="ID_PAŃSTWA" />
+                <ScalarProperty Name="PAŃSTWO" ColumnName="PAŃSTWO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PŁATNOŚCI">
+            <EntityTypeMapping TypeName="Model.PŁATNOŚCI">
+              <MappingFragment StoreEntitySet="PŁATNOŚCI">
+                <ScalarProperty Name="ID_PŁATNOŚCI" ColumnName="ID_PŁATNOŚCI" />
+                <ScalarProperty Name="TYP_PŁATNOŚCI" ColumnName="TYP_PŁATNOŚCI" />
+                <ScalarProperty Name="OPIS_PŁATNOŚCI" ColumnName="OPIS_PŁATNOŚCI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="POJAZDY_KURIERSKIE">
+            <EntityTypeMapping TypeName="Model.POJAZDY_KURIERSKIE">
+              <MappingFragment StoreEntitySet="POJAZDY_KURIERSKIE">
+                <ScalarProperty Name="ID_POJAZDU" ColumnName="ID_POJAZDU" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="TYP_POJAZDU" ColumnName="TYP_POJAZDU" />
+                <ScalarProperty Name="NUMER_REJESTRACYJNY" ColumnName="NUMER_REJESTRACYJNY" />
+                <ScalarProperty Name="MARKA_POJAZDU" ColumnName="MARKA_POJAZDU" />
+                <ScalarProperty Name="DATA_NASTĘPNEGO_PRZEGLĄDU" ColumnName="DATA_NASTĘPNEGO_PRZEGLĄDU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRACOWNICY">
+            <EntityTypeMapping TypeName="Model.PRACOWNICY">
+              <MappingFragment StoreEntitySet="PRACOWNICY">
+                <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PRACOWNIKA" />
+                <ScalarProperty Name="TYP_PRACOWNIKA" ColumnName="TYP_PRACOWNIKA" />
+                <ScalarProperty Name="ADRES_ZAMIESZKANIA" ColumnName="ADRES_ZAMIESZKANIA" />
+                <ScalarProperty Name="ID_LOKALIZACJI" ColumnName="ID_LOKALIZACJI" />
+                <ScalarProperty Name="ID_KONTA" ColumnName="ID_KONTA" />
+                <ScalarProperty Name="PIERWSZE_IMIE" ColumnName="PIERWSZE_IMIE" />
+                <ScalarProperty Name="DRUGIE_IMIE" ColumnName="DRUGIE_IMIE" />
+                <ScalarProperty Name="NAZWISKO" ColumnName="NAZWISKO" />
+                <ScalarProperty Name="WYNAGRODZENIE" ColumnName="WYNAGRODZENIE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRZESYŁKI">
+            <EntityTypeMapping TypeName="Model.PRZESYŁKI">
+              <MappingFragment StoreEntitySet="PRZESYŁKI">
+                <ScalarProperty Name="ID_PRZESYŁKI" ColumnName="ID_PRZESYŁKI" />
+                <ScalarProperty Name="ID_NADAWCY" ColumnName="ID_NADAWCY" />
+                <ScalarProperty Name="ID_ODBIORCY" ColumnName="ID_ODBIORCY" />
+                <ScalarProperty Name="ID_KURIERA_DOSTARCZAJĄCEGO" ColumnName="ID_KURIERA_DOSTARCZAJĄCEGO" />
+                <ScalarProperty Name="TYP_PRZESYŁKI" ColumnName="TYP_PRZESYŁKI" />
+                <ScalarProperty Name="STATUS_PRZESYŁKI" ColumnName="STATUS_PRZESYŁKI" />
+                <ScalarProperty Name="ID_ADRESU_POCZĄTKOWEGO" ColumnName="ID_ADRESU_POCZĄTKOWEGO" />
+                <ScalarProperty Name="ID_ADRESU_KOŃCOWEGO" ColumnName="ID_ADRESU_KOŃCOWEGO" />
+                <ScalarProperty Name="ID_PŁATNOŚCI" ColumnName="ID_PŁATNOŚCI" />
+                <ScalarProperty Name="DATA_NADANIA_PRZESYŁKI" ColumnName="DATA_NADANIA_PRZESYŁKI" />
+                <ScalarProperty Name="DATA_ODEBRANIA_PRZESYŁKI" ColumnName="DATA_ODEBRANIA_PRZESYŁKI" />
+                <ScalarProperty Name="KOSZT_PRZESYŁKI" ColumnName="KOSZT_PRZESYŁKI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="STATUS_PRZESYŁKI">
+            <EntityTypeMapping TypeName="Model.STATUS_PRZESYŁKI">
+              <MappingFragment StoreEntitySet="STATUS_PRZESYŁKI">
+                <ScalarProperty Name="ID_STATUSU_PRZESYŁKI" ColumnName="ID_STATUSU_PRZESYŁKI" />
+                <ScalarProperty Name="OPIS_STATUSU_PRZESYŁKI" ColumnName="OPIS_STATUSU_PRZESYŁKI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_KONT">
+            <EntityTypeMapping TypeName="Model.TYPY_KONT">
+              <MappingFragment StoreEntitySet="TYPY_KONT">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_KONTA" ColumnName="TYP_KONTA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_LOKALIZACJI">
+            <EntityTypeMapping TypeName="Model.TYPY_LOKALIZACJI">
+              <MappingFragment StoreEntitySet="TYPY_LOKALIZACJI">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_LOKALIZACJI" ColumnName="TYP_LOKALIZACJI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_PACZEK">
+            <EntityTypeMapping TypeName="Model.TYPY_PACZEK">
+              <MappingFragment StoreEntitySet="TYPY_PACZEK">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_PACZKI" ColumnName="TYP_PACZKI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_PŁATNOŚCI">
+            <EntityTypeMapping TypeName="Model.TYPY_PŁATNOŚCI">
+              <MappingFragment StoreEntitySet="TYPY_PŁATNOŚCI">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_PŁATNOŚCI" ColumnName="TYP_PŁATNOŚCI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_POJAZDÓW_KURIERSKICH">
+            <EntityTypeMapping TypeName="Model.TYPY_POJAZDÓW_KURIERSKICH">
+              <MappingFragment StoreEntitySet="TYPY_POJAZDÓW_KURIERSKICH">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_POJAZDU" ColumnName="TYP_POJAZDU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_PRACOWNIKÓW">
+            <EntityTypeMapping TypeName="Model.TYPY_PRACOWNIKÓW">
+              <MappingFragment StoreEntitySet="TYPY_PRACOWNIKÓW">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_PRACOWNIKA" ColumnName="TYP_PRACOWNIKA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TYPY_PRZESYŁEK">
+            <EntityTypeMapping TypeName="Model.TYPY_PRZESYŁEK">
+              <MappingFragment StoreEntitySet="TYPY_PRZESYŁEK">
+                <ScalarProperty Name="ID_TYPU" ColumnName="ID_TYPU" />
+                <ScalarProperty Name="TYP_PRZESYŁKI" ColumnName="TYP_PRZESYŁKI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WOJEWÓDZTWA">
+            <EntityTypeMapping TypeName="Model.WOJEWÓDZTWA">
+              <MappingFragment StoreEntitySet="WOJEWÓDZTWA">
+                <ScalarProperty Name="ID_WOJEWÓDZTWA" ColumnName="ID_WOJEWÓDZTWA" />
+                <ScalarProperty Name="PAŃSTWO" ColumnName="PAŃSTWO" />
+                <ScalarProperty Name="WOJEWÓDZTWO" ColumnName="WOJEWÓDZTWO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="SZEFOWIE_PODWŁADNI" TypeName="Model.SZEFOWIE_PODWŁADNI" StoreEntitySet="SZEFOWIE_PODWŁADNI">
+            <EndProperty Name="PRACOWNICY">
+              <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_PODWŁADNEGO" />
+            </EndProperty>
+            <EndProperty Name="PRACOWNICY1">
+              <ScalarProperty Name="ID_PRACOWNIKA" ColumnName="ID_SZEFA" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="GENERUJ_ADRESY" FunctionName="Model.Store.GENERUJ_ADRESY" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_KONTA" FunctionName="Model.Store.GENERUJ_KONTA" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_KURIERZY_POJAZDY" FunctionName="Model.Store.GENERUJ_KURIERZY_POJAZDY" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_LOKALIZACJE" FunctionName="Model.Store.GENERUJ_LOKALIZACJE" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_NADAWCÓW" FunctionName="Model.Store.GENERUJ_NADAWCÓW" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_ODBIORCÓW" FunctionName="Model.Store.GENERUJ_ODBIORCÓW" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_PACZKI" FunctionName="Model.Store.GENERUJ_PACZKI" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_PŁATNOŚCI" FunctionName="Model.Store.GENERUJ_PŁATNOŚCI" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_POJAZDY" FunctionName="Model.Store.GENERUJ_POJAZDY" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_PRACOWNIKÓW" FunctionName="Model.Store.GENERUJ_PRACOWNIKÓW" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_PRZESYŁKI" FunctionName="Model.Store.GENERUJ_PRZESYŁKI" />
+          <FunctionImportMapping FunctionImportName="GENERUJ_SZEFOWIE_PODWŁADNI" FunctionName="Model.Store.GENERUJ_SZEFOWIE_PODWŁADNI" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

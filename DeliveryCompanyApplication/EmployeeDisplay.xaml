@@ -1,0 +1,27 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.EmployeeDisplay"
+        Title="Wyświetlanie pracowników" Height="332.836" Width="859.702" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="pRACOWNICYViewSource" Source="{Binding PRACOWNICY, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource pRACOWNICYViewSource}">
+
+        <DataGrid x:Name="pRACOWNICYDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="0,0,-2,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_PRACOWNIKAColumn" Width="SizeToHeader" Header="ID PRACOWNIKA" Binding="{Binding ID_PRACOWNIKA}"/>
+                <DataGridTextColumn x:Name="tYP_PRACOWNIKAColumn" Width="SizeToHeader" Header="TYP PRACOWNIKA" Binding="{Binding TYP_PRACOWNIKA}"/>
+                <DataGridTextColumn x:Name="aDRES_ZAMIESZKANIAColumn" Width="SizeToHeader" Header="ADRES ZAMIESZKANIA" Binding="{Binding ADRES_ZAMIESZKANIA}"/>
+                <DataGridTextColumn x:Name="iD_LOKALIZACJIColumn" Width="SizeToHeader" Header="ID LOKALIZACJI" Binding="{Binding ID_LOKALIZACJI}"/>
+                <DataGridTextColumn x:Name="iD_KONTAColumn" Width="SizeToHeader" Header="ID KONTA" Binding="{Binding ID_KONTA}"/>
+                <DataGridTextColumn x:Name="pIERWSZE_IMIEColumn" Width="SizeToHeader" Header="PIERWSZE IMIE" Binding="{Binding PIERWSZE_IMIE}"/>
+                <DataGridTextColumn x:Name="dRUGIE_IMIEColumn" Width="SizeToHeader" Header="DRUGIE IMIE" Binding="{Binding DRUGIE_IMIE}"/>
+                <DataGridTextColumn x:Name="nAZWISKOColumn" Width="SizeToHeader" Header="NAZWISKO" Binding="{Binding NAZWISKO}"/>
+                <DataGridTextColumn x:Name="wYNAGRODZENIEColumn" Width="SizeToHeader" Header="WYNAGRODZENIE" Binding="{Binding WYNAGRODZENIE}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

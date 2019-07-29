@@ -1,0 +1,34 @@
+﻿<Window x:Class="DeliveryCompanyApplication.LogInWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication"
+        Title="Logowanie" Height="270.5" Width="368">
+
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <TextBox x:Name="loginTextBox" HorizontalAlignment="Left" Height="22" Margin="144,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172">
+        <TextBox.Text>
+            <Binding Path="login" UpdateSourceTrigger="LostFocus">
+                <Binding.ValidationRules>
+                    <local:StringTextBoxValidator/>
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox.Text>
+        </TextBox>
+        <Label Content="Podaj login" HorizontalAlignment="Left" Margin="30,52,0,0" VerticalAlignment="Top"/>
+        <Label Content="Podaj hasło" HorizontalAlignment="Left" Margin="30,88,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="144,94,0,0" VerticalAlignment="Top" Width="172"/>
+        <Button x:Name="LoginButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="192,176,0,0" VerticalAlignment="Top" Width="74" Click="LoginButton_Click" RenderTransformOrigin="2.38,2.432" IsDefault="True" />
+        <Button x:Name="CancelButton" Content="Anuluj" HorizontalAlignment="Left" Margin="98,176,0,0" VerticalAlignment="Top" Width="74" Click="CancelButton_Click" RenderTransformOrigin="2.38,2.432" IsCancel="True" />
+        
+    </Grid>
+</Window>

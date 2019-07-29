@@ -1,0 +1,23 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.AccountDisplay"
+        Title="Wyświetlanie kont" Height="443.672" Width="519.881" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="kONTAViewSource" Source="{Binding KONTA, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource kONTAViewSource}">
+
+        <DataGrid x:Name="kONTADataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_KONTAColumn" Width="SizeToHeader" Header="ID KONTA" Binding="{Binding ID_KONTA}"/>
+                <DataGridTextColumn x:Name="nICKColumn" Width="120" Header="NICK" Binding="{Binding NICK}"/>
+                <DataGridTextColumn x:Name="tYP_KONTAColumn" Width="100" Header="TYP KONTA" Binding="{Binding TYP_KONTA}"/>
+                <DataGridTextColumn x:Name="hASŁOColumn" Width="100" Header="HASŁO" Binding="{Binding HASŁO}"/>
+                <DataGridTextColumn x:Name="mAILColumn" Width="120" Header="MAIL" Binding="{Binding MAIL}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

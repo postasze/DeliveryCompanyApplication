@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ea7fec6611f84bf0b135b2d2030a2348" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.ADRESY" Width="1.5" PointX="7.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.KONTA" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.KURIERZY_POJAZDY" Width="1.5" PointX="17.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.LOKALIZACJE" Width="1.5" PointX="9.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.MIASTA" Width="1.5" PointX="5.25" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.NADAWCY" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ODBIORCY" Width="1.5" PointX="9.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PACZKI" Width="1.5" PointX="17.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PAŃSTWA" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PŁATNOŚCI" Width="1.5" PointX="12.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.POJAZDY_KURIERSKIE" Width="1.5" PointX="15" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRACOWNICY" Width="1.5" PointX="12" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRZESYŁKI" Width="1.5" PointX="15" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.STATUS_PRZESYŁKI" Width="1.5" PointX="12.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_KONT" Width="1.5" PointX="7.5" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_LOKALIZACJI" Width="1.5" PointX="7.5" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_PACZEK" Width="1.5" PointX="15" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_PŁATNOŚCI" Width="1.5" PointX="10.5" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_POJAZDÓW_KURIERSKICH" Width="1.5" PointX="12.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_PRACOWNIKÓW" Width="1.5" PointX="9.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.TYPY_PRZESYŁEK" Width="1.5" PointX="12.75" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.WOJEWÓDZTWA" Width="1.5" PointX="3" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_ADRES_KOŃCOWY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ADRES_LOKALIZACJI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ADRES_NADAWCY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ADRES_ODBIORCY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ADRES_POCZĄTKOWY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ADRES_PRACOWNIKA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MIASTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PAŃSTWO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_WOJEWÓDZTWO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_KONTO_NADAWCY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_KONTO_PRACOWNIKA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_KONTA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_KURIER_PROWADZĄCY_POJAZD" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_POJAZD_UZYTY_PRZEZ_KURIERA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PACZKA_W_LOKALIZACJI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_POJAZD_W_LOKALIZACJI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRACUJE_W_LOKALIZACJI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_LOKALIZACJI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_MIASTO_W_WOJEWÓDZTWIE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRZESYŁKA_OD_NADAWCY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRZESYŁKA_DO_ODBIORCY" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_PACZKI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ZAWARTA_W_PRZESYŁCE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_WOJEWÓDZTWO_W_PAŃSTWIE" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_METODA_PŁATNOŚCI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_PŁATNOŚCI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_POJAZDU" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRZESYŁKA_POPRZEZ_KURIERA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_PRACOWNIKA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_STATUS_PRZESYŁKI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_TYP_PRZESYŁKI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.SZEFOWIE_PODWŁADNI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

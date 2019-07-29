@@ -1,0 +1,30 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.VehiclesDisplay"
+        Title="Wyświetlanie pojazdów kurierskich" Height="386.567" Width="700" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="pOJAZDY_KURIERSKIEViewSource" Source="{Binding POJAZDY_KURIERSKIE, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource pOJAZDY_KURIERSKIEViewSource}">
+
+        <DataGrid x:Name="pOJAZDY_KURIERSKIEDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_POJAZDUColumn" Width="SizeToHeader" Header="ID POJAZDU" Binding="{Binding ID_POJAZDU}"/>
+                <DataGridTextColumn x:Name="iD_LOKALIZACJIColumn" Width="SizeToHeader" Header="ID LOKALIZACJI" Binding="{Binding ID_LOKALIZACJI}"/>
+                <DataGridTextColumn x:Name="tYP_POJAZDUColumn" Width="SizeToHeader" Header="TYP POJAZDU" Binding="{Binding TYP_POJAZDU}"/>
+                <DataGridTextColumn x:Name="nUMER_REJESTRACYJNYColumn" Width="SizeToHeader" Header="NUMER REJESTRACYJNY" Binding="{Binding NUMER_REJESTRACYJNY}"/>
+                <DataGridTextColumn x:Name="mARKA_POJAZDUColumn" Width="SizeToHeader" Header="MARKA POJAZDU" Binding="{Binding MARKA_POJAZDU}"/>
+                <DataGridTemplateColumn x:Name="dATA_NASTĘPNEGO_PRZEGLĄDUColumn" Width="SizeToHeader" Header="DATA NASTĘPNEGO PRZEGLĄDU">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding DATA_NASTĘPNEGO_PRZEGLĄDU, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

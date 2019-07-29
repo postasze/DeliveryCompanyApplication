@@ -1,0 +1,21 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.LocalizationDisplay"
+        Title="Wyświetlanie lokalizacji" Height="322.388" Width="326.866" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="lOKALIZACJEViewSource" Source="{Binding LOKALIZACJE, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource lOKALIZACJEViewSource}">
+
+        <DataGrid x:Name="lOKALIZACJEDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_LOKALIZACJIColumn" Width="SizeToHeader" Header="ID LOKALIZACJI" Binding="{Binding ID_LOKALIZACJI}"/>
+                <DataGridTextColumn x:Name="tYP_LOKALIZACJIColumn" Width="SizeToHeader" Header="TYP LOKALIZACJI" Binding="{Binding TYP_LOKALIZACJI}"/>
+                <DataGridTextColumn x:Name="aDRES_LOKALIZACJIColumn" Width="SizeToHeader" Header="ADRES LOKALIZACJI" Binding="{Binding ADRES_LOKALIZACJI}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

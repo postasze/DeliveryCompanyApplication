@@ -1,0 +1,46 @@
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\bin\Debug\DeliveryCompanyApplication.exe.config
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\bin\Debug\DeliveryCompanyApplication.exe
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\bin\Debug\DeliveryCompanyApplication.pdb
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\bin\Debug\EntityFramework.dll
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\bin\Debug\EntityFramework.xml
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.csprojResolveAssemblyReference.cache
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\App.g.cs
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication_MarkupCompile.cache
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.g.resources
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.Properties.Resources.resources
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.csproj.GenerateResource.Cache
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.exe
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.pdb
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\GeneratedInternalTypeHelper.g.cs
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication_MarkupCompile.lref
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\IntroWindow.g.cs
+c:\users\pawel\documents\visual studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\IntroWindow.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\LogInWindow.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\LogInWindow.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryTrackingWindow.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\RegistrationWindow.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryTrackingWindow.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\RegistrationWindow.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.AdministatorMDIPanel.resources
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\AccountDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\AddressDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveriesDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\EmployeeDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\LocalizationDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\PackageDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\SenderDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\VehiclesDisplay.g.cs
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\AccountDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\AddressDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveriesDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\EmployeeDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\LocalizationDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\PackageDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\SenderDisplay.baml
+C:\Users\Pawel\Documents\Visual Studio 2013\Projects\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\VehiclesDisplay.baml
+F:\DeliveryCompanyApplication 02.06.2017\DeliveryCompanyApplication\bin\Debug\DeliveryCompanyApplication.exe.config
+F:\DeliveryCompanyApplication 02.06.2017\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.exe
+F:\DeliveryCompanyApplication 02.06.2017\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.pdb
+C:\Users\Pawel\Desktop\Studia\projekty\DeliveryCompanyApplication\DeliveryCompanyApplication\bin\Debug\DeliveryCompanyApplication.exe.config
+C:\Users\Pawel\Desktop\Studia\projekty\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.exe
+C:\Users\Pawel\Desktop\Studia\projekty\DeliveryCompanyApplication\DeliveryCompanyApplication\obj\Debug\DeliveryCompanyApplication.pdb

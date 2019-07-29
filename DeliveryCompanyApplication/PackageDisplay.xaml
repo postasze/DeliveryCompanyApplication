@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.PackageDisplay"
+        Title="Wyświetlanie paczek" Height="326.866" Width="517.911" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="pACZKIViewSource" Source="{Binding PACZKI, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource pACZKIViewSource}">
+
+        <DataGrid x:Name="pACZKIDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_PACZKIColumn" Width="SizeToHeader" Header="ID PACZKI" Binding="{Binding ID_PACZKI}"/>
+                <DataGridTextColumn x:Name="iD_PRZESYŁKIColumn" Width="SizeToHeader" Header="ID PRZESYŁKI" Binding="{Binding ID_PRZESYŁKI}"/>
+                <DataGridTextColumn x:Name="iD_LOKALIZACJIColumn" Width="SizeToHeader" Header="ID LOKALIZACJI" Binding="{Binding ID_LOKALIZACJI}"/>
+                <DataGridTextColumn x:Name="tYP_PACZKIColumn" Width="SizeToHeader" Header="TYP PACZKI" Binding="{Binding TYP_PACZKI}"/>
+                <DataGridTextColumn x:Name="mASA_PACZKIColumn" Width="SizeToHeader" Header="MASA PACZKI" Binding="{Binding MASA_PACZKI}"/>
+                <DataGridTextColumn x:Name="wYMIARY_PACZKIColumn" Width="SizeToHeader" Header="WYMIARY PACZKI" Binding="{Binding WYMIARY_PACZKI}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

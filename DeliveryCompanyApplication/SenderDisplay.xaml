@@ -1,0 +1,24 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.SenderDisplay"
+        Title="Wyświetlanie nadawców" Height="379.104" Width="532.836" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="nADAWCYViewSource" Source="{Binding NADAWCY, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource nADAWCYViewSource}">
+
+        <DataGrid x:Name="nADAWCYDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_NADAWCYColumn" Width="SizeToHeader" Header="ID NADAWCY" Binding="{Binding ID_NADAWCY}"/>
+                <DataGridTextColumn x:Name="iD_KONTAColumn" Width="SizeToHeader" Header="ID KONTA" Binding="{Binding ID_KONTA}"/>
+                <DataGridTextColumn x:Name="aDRES_ZAMIESZKANIAColumn" Width="SizeToHeader" Header="ADRES ZAMIESZKANIA" Binding="{Binding ADRES_ZAMIESZKANIA}"/>
+                <DataGridTextColumn x:Name="pIERWSZE_IMIEColumn" Width="SizeToHeader" Header="PIERWSZE IMIE" Binding="{Binding PIERWSZE_IMIE}"/>
+                <DataGridTextColumn x:Name="dRUGIE_IMIEColumn" Width="SizeToHeader" Header="DRUGIE IMIE" Binding="{Binding DRUGIE_IMIE}"/>
+                <DataGridTextColumn x:Name="nAZWISKOColumn" Width="SizeToHeader" Header="NAZWISKO" Binding="{Binding NAZWISKO}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

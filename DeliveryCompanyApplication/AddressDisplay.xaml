@@ -1,0 +1,26 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:DeliveryCompanyApplication" x:Class="DeliveryCompanyApplication.AddressDisplay"
+        Title="Wyświetlanie adresów" Height="362.686" Width="758.209" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:DataSet1 x:Key="dataSet1"/>
+        <CollectionViewSource x:Key="aDRESYViewSource" Source="{Binding ADRESY, Source={StaticResource dataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource aDRESYViewSource}">
+
+        <DataGrid x:Name="aDRESYDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_ADRESUColumn" Width="SizeToHeader" Header="ID ADRESU" Binding="{Binding ID_ADRESU}"/>
+                <DataGridTextColumn x:Name="uLICAColumn" Width="100" Header="ULICA" Binding="{Binding ULICA}"/>
+                <DataGridTextColumn x:Name="nUMER_DOMUColumn" Width="SizeToHeader" Header="NUMER DOMU" Binding="{Binding NUMER_DOMU}"/>
+                <DataGridTextColumn x:Name="nUMER_MIESZKANIAColumn" Width="SizeToHeader" Header="NUMER MIESZKANIA" Binding="{Binding NUMER_MIESZKANIA}"/>
+                <DataGridTextColumn x:Name="kOD_POCZTOWYColumn" Width="SizeToHeader" Header="KOD POCZTOWY" Binding="{Binding KOD_POCZTOWY}"/>
+                <DataGridTextColumn x:Name="mIASTOColumn" Width="80" Header="MIASTO" Binding="{Binding MIASTO}"/>
+                <DataGridTextColumn x:Name="wOJEWÓDZTWOColumn" Width="SizeToHeader" Header="WOJEWÓDZTWO" Binding="{Binding WOJEWÓDZTWO}"/>
+                <DataGridTextColumn x:Name="pAŃSTWOColumn" Width="76" Header="PAŃSTWO" Binding="{Binding PAŃSTWO}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
