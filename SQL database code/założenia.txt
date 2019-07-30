@@ -1,0 +1,39 @@
+identyfikatory lokalizacji
+1 - siedziba
+2 - oddzia³ firmy
+3 - oddzia³ firmy
+4 - oddzia³ firmy
+5 - oddzia³ firmy
+6 - oddzia³ firmy
+7 - punkt z pojazdami kurierskimi
+8 - punkt z pojazdami kurierskimi
+9 - punkt z pojazdami kurierskimi
+10 - punkt z pojazdami kurierskimi
+11 - 100 pozosta³e lokalizacje
+
+pracownicy - konta od 1 do 100
+nadawcy - konta od 101 do 200
+
+Pracownicy:
+od 1 do 5 cz³onkowie zarz¹du - prze³o¿eni menad¿erów
+od 6 do 10 informatycy
+od 11 do 20 menad¿erowie - podw³adni cz³onków zarz¹du, prze³o¿eni pozosta³ych
+od 21 do 60 kurierzy
+od 61 do 100 pracownicy biura
+
+1 jest prze³o¿onym 11, 12
+2 jest prze³o¿onym 13, 14
+3 jest prze³o¿onym 15, 16
+4 jest prze³o¿onym 17, 18
+5 jest prze³o¿onym 19, 20
+
+11 jest prze³o¿onym 6, 7, 8, 9, 10
+12 jest prze³o¿onym 21, 22, 23, 24, 25, 26, 27, 28, 29, 30
+13 jest prze³o¿onym 31, 32, 33, 34, 35, 36, 37, 38, 39, 40
+14 jest prze³o¿onym 41, 42, 43, 44, 45, 46, 47, 48, 49, 50
+15 jest prze³o¿onym 51, 52, 53, 54, 55, 56, 57, 58, 59, 60
+16 jest prze³o¿onym 61, 62, 63, 64, 65, 66, 67, 68, 69, 70
+17 jest prze³o¿onym 71, 72, 73, 74, 75, 76, 77, 78, 79, 80
+18 jest prze³o¿onym 81, 82, 83, 84, 85, 86, 87, 88, 89, 90
+19 jest prze³o¿onym 91, 92, 93, 94, 95, 96, 97, 98, 99, 100
+20 nie jets niczym prze³o¿onym
